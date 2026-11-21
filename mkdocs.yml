@@ -1,6 +1,6 @@
 site_name: leankg
 site_description: Documents (English and Japanese) to a Neo4j knowledge graph — rules first, a little LLM.
-repo_url: https://github.com/OWNER/leankg
+repo_url: https://github.com/loksai-codes/LeanKG-
 repo_name: leankg
 docs_dir: docs
 theme:

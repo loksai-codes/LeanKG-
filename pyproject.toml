@@ -51,9 +51,9 @@ dev = ["leankg[ja,neo4j,groq,ollama]"]
 leankg = "leankg.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/OWNER/leankg"
-Documentation = "https://OWNER.github.io/leankg"
-Issues = "https://github.com/OWNER/leankg/issues"
+Homepage = "https://github.com/loksai-codes/LeanKG-"
+Documentation = "https://loksai-codes.github.io/LeanKG-"
+Issues = "https://github.com/loksai-codes/LeanKG-/issues"
 
 [dependency-groups]
 dev = [
