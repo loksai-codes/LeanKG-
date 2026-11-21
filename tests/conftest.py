@@ -25,6 +25,27 @@ requires_ginza = pytest.mark.skipif(
 )
 
 
+@pytest.fixture(autouse=True)
+def no_heavy_models(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Unit tests never download or load GLiNER / sentence-transformers models.
+
+    Tests may still inject fakes (``GlinerStage._models[...]``, ``stage._encoder``,
+    ``stage._embedder``); only the real loading paths are disabled.
+    """
+    from leankg.stages.entities.gliner_stage import GlinerStage
+    from leankg.stages.linking import LinkingStage
+    from leankg.stages.linking.chunk_embed import ChunkEmbedStage
+
+    def gliner_model(self: GlinerStage) -> object:
+        name = self.ctx.require_pack().models.gliner.model
+        return GlinerStage._models.get(name)
+
+    monkeypatch.setattr(GlinerStage, "real_model", GlinerStage.model, raising=False)
+    monkeypatch.setattr(GlinerStage, "model", gliner_model)
+    monkeypatch.setattr(ChunkEmbedStage, "encoder", lambda self: self._encoder)
+    monkeypatch.setattr(LinkingStage, "embedder", lambda self: self._embedder)
+
+
 @pytest.fixture
 def isolated_env(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     """Run in an empty folder with no LEANKG_*/GROQ/NEO4J env vars."""

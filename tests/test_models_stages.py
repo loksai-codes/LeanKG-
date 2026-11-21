@@ -90,6 +90,7 @@ def test_gliner_missing_extra_is_a_warning(monkeypatch: pytest.MonkeyPatch) -> N
 
     monkeypatch.setattr(builtins, "__import__", fake_import)
     monkeypatch.setattr(GlinerStage, "_models", {})
+    monkeypatch.setattr(GlinerStage, "model", GlinerStage.real_model)  # type: ignore[attr-defined]
     ctx = make_ctx("health_stress")
     doc = _run("Nothing here.", (*BASE, "gliner"), ctx=ctx)
     assert doc.mentions == []
