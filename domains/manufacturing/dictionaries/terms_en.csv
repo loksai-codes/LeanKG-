@@ -1,0 +1,72 @@
+id,type,lang,term,synonyms,source
+# HAND-WRITTEN SEED DATA (leankg authors) - small illustrative vocabulary,,,,,
+MF:hydraulic_press,Machine,en,hydraulic press,press machine,seed
+MF:cnc_machine,Machine,en,CNC machine,machining center|CNC lathe,seed
+MF:conveyor,Machine,en,conveyor,conveyor belt|belt conveyor,seed
+MF:robot,Machine,en,industrial robot,welding robot,seed
+MF:compressor,Machine,en,compressor,air compressor,seed
+MF:injection_molding,Machine,en,injection molding machine,injection moulding machine,seed
+MF:vehicle,Machine,en,vehicle,car,seed
+MF:hydraulic_pump,Component,en,hydraulic pump,,seed
+MF:bearing,Component,en,bearing,ball bearing|roller bearing,seed
+MF:seal,Component,en,seal,oil seal|gasket,seed
+MF:motor,Component,en,motor,electric motor,seed
+MF:gearbox,Component,en,gearbox,gear box|reducer,seed
+MF:belt,Component,en,drive belt,timing belt,seed
+MF:valve,Component,en,valve,solenoid valve,seed
+MF:hose,Component,en,hose,hydraulic hose,seed
+MF:brake,Component,en,brake,brakes|brake system,seed
+MF:brake_pad,Component,en,brake pad,,seed
+MF:airbag,Component,en,airbag,air bag,seed
+MF:fuel_pump,Component,en,fuel pump,,seed
+MF:engine,Component,en,engine,,seed
+MF:spindle,Component,en,spindle,,seed
+MF:filter,Component,en,filter,oil filter|air filter,seed
+MF:leak,FailureMode,en,leak,leakage|oil leak,seed
+MF:crack,FailureMode,en,crack,cracking,seed
+MF:fracture,FailureMode,en,fracture,breakage,seed
+MF:overheating,FailureMode,en,overheating,overheat,seed
+MF:seizure,FailureMode,en,seizure,seizing|seized bearing,seed
+MF:short_circuit,FailureMode,en,short circuit,electrical short,seed
+MF:stall,FailureMode,en,engine stall,stalling|stall,seed
+MF:jam,FailureMode,en,jam,jamming,seed
+MF:failure_to_deploy,FailureMode,en,failure to deploy,non-deployment,seed
+MF:wear,Cause,en,wear,abrasion,seed
+MF:corrosion,Cause,en,corrosion,rust,seed
+MF:contamination,Cause,en,contamination,foreign matter|debris,seed
+MF:fatigue,Cause,en,metal fatigue,fatigue,seed
+MF:misalignment,Cause,en,misalignment,,seed
+MF:overload,Cause,en,overload,overloading,seed
+MF:poor_lubrication,Cause,en,insufficient lubrication,lack of lubrication|poor lubrication,seed
+MF:loose_bolt,Cause,en,loose bolt,loosened bolt,seed
+MF:human_error,Cause,en,human error,operator error,seed
+MF:noise,Observation,en,abnormal noise,unusual noise|grinding noise,seed
+MF:vibration,Observation,en,vibration,excessive vibration,seed
+MF:high_temperature,Observation,en,high temperature,temperature rise,seed
+MF:pressure_drop,Observation,en,pressure drop,low pressure,seed
+MF:smoke,Observation,en,smoke,,seed
+MF:warning_light,Observation,en,warning light,check engine light,seed
+MF:vibration_sensor,Sensor,en,vibration sensor,accelerometer,seed
+MF:temperature_sensor,Sensor,en,temperature sensor,thermocouple,seed
+MF:pressure_sensor,Sensor,en,pressure sensor,pressure gauge,seed
+MF:camera,Sensor,en,vision camera,camera|vision system,seed
+MF:replacement,MaintenanceAction,en,replacement,replace|replaced,seed
+MF:repair,MaintenanceAction,en,repair,repaired,seed
+MF:lubrication,MaintenanceAction,en,lubrication,greasing|oiling,seed
+MF:inspection,MaintenanceAction,en,inspection,visual inspection,seed
+MF:tightening,MaintenanceAction,en,retightening,tightening|re-torque,seed
+MF:cleaning,MaintenanceAction,en,cleaning,,seed
+MF:assembly_line,Station,en,assembly line,final assembly,seed
+MF:welding_station,Station,en,welding station,welding line,seed
+MF:paint_shop,Station,en,paint shop,painting process,seed
+MF:press_line,Station,en,press line,stamping line,seed
+MF:preventive_maintenance,Countermeasure,en,preventive maintenance,predictive maintenance,seed
+MF:checklist,Countermeasure,en,checklist,inspection checklist,seed
+MF:jidoka,TPSConcept,en,Jidoka,autonomation,seed
+MF:andon,TPSConcept,en,Andon,andon cord,seed
+MF:poka_yoke,TPSConcept,en,poka-yoke,error proofing|mistake proofing|pokayoke,seed
+MF:five_whys,TPSConcept,en,5 Whys,five whys,seed
+MF:kaizen,TPSConcept,en,Kaizen,continuous improvement,seed
+MF:jit,TPSConcept,en,Just-in-Time,JIT|just in time,seed
+MF:kanban,TPSConcept,en,Kanban,,seed
+MF:genchi_genbutsu,TPSConcept,en,Genchi Genbutsu,go and see,seed

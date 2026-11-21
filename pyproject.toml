@@ -113,7 +113,7 @@ module = [
   "ahocorasick", "ginza", "ginza.*", "jaconv", "gliner", "gliner.*", "negspacy", "negspacy.*",
   "scispacy", "scispacy.*", "sentence_transformers", "sentence_transformers.*", "trafilatura",
   "trafilatura.*", "networkx", "networkx.*", "ollama", "ollama.*", "spacy", "spacy.*",
-  "rdflib", "rdflib.*", "pypdf", "pypdf.*",
+  "rdflib", "rdflib.*", "pypdf", "pypdf.*", "neo4j", "neo4j.*", "groq", "groq.*",
 ]
 ignore_missing_imports = true
 

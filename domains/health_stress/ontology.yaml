@@ -1,0 +1,38 @@
+# health_stress domain pack — ontology (hand-written seed, leankg authors)
+version: 1
+name: health_stress
+description: Psychological stress, its health effects, interventions and measurement.
+entities:
+  Condition:    {labels: {en: Condition, ja: 疾患}, description: "Diagnosable disorder or disease."}
+  Symptom:      {labels: {en: Symptom, ja: 症状}, description: "Experienced or observed sign."}
+  Stressor:     {labels: {en: Stressor, ja: ストレス要因}, description: "Source or kind of stress."}
+  Intervention: {labels: {en: Intervention, ja: 介入}, description: "Treatment, therapy or behaviour change."}
+  Biomarker:    {labels: {en: Biomarker, ja: バイオマーカー}, description: "Measurable biological indicator."}
+  Instrument:   {labels: {en: Instrument, ja: 評価尺度}, description: "Questionnaire or scale."}
+  Outcome:      {labels: {en: Outcome, ja: アウトカム}, description: "Functional or life outcome."}
+relations:
+  HAS_SYMPTOM:
+    from: [Condition]
+    to: [Symptom]
+    labels: {en: has symptom, ja: 症状を持つ}
+  INCREASES_RISK_OF:
+    from: [Stressor, Condition, Symptom]
+    to: [Condition, Symptom, Outcome]
+    labels: {en: increases risk of, ja: リスクを高める}
+  REDUCES:
+    from: [Intervention]
+    to: [Condition, Symptom, Stressor, Biomarker, Outcome]
+    labels: {en: reduces, ja: 軽減する}
+  TREATS:
+    from: [Intervention]
+    to: [Condition]
+    labels: {en: treats, ja: 治療する}
+  MEASURED_BY:
+    from: [Condition, Symptom, Stressor, Outcome]
+    to: [Instrument, Biomarker]
+    labels: {en: measured by, ja: 測定される}
+  ASSOCIATED_WITH:
+    from: ["*"]
+    to: ["*"]
+    symmetric: true
+    labels: {en: associated with, ja: 関連する}

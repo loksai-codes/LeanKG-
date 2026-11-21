@@ -1,0 +1,44 @@
+# manufacturing domain pack — ontology (hand-written seed, leankg authors)
+version: 1
+name: manufacturing
+description: Machines, components, failures, causes, maintenance and TPS concepts.
+entities:
+  Machine:           {labels: {en: Machine, ja: 機械}, description: "Machine, vehicle or equipment."}
+  Component:         {labels: {en: Component, ja: 部品}, description: "Part of a machine."}
+  FailureMode:       {labels: {en: Failure mode, ja: 故障モード}, description: "How something fails."}
+  Cause:             {labels: {en: Cause, ja: 原因}, description: "Root cause or failure mechanism."}
+  Observation:       {labels: {en: Observation, ja: 現象}, description: "Observed symptom of a problem."}
+  MaintenanceAction: {labels: {en: Maintenance action, ja: 保全作業}, description: "Repair or upkeep activity."}
+  Station:           {labels: {en: Process/Station, ja: 工程}, description: "Production process, line or station."}
+  Sensor:            {labels: {en: Sensor, ja: センサ}, description: "Detection device."}
+  Countermeasure:    {labels: {en: Countermeasure, ja: 対策}, description: "Action that prevents recurrence."}
+  TPSConcept:        {labels: {en: TPS concept, ja: TPS概念}, description: "Toyota Production System concept."}
+relations:
+  PART_OF:
+    from: [Component]
+    to: [Machine, Component]
+    labels: {en: part of, ja: 一部}
+  HAS_FAILURE_MODE:
+    from: [Component, Machine]
+    to: [FailureMode]
+    labels: {en: has failure mode, ja: 故障モードを持つ}
+  CAUSED_BY:
+    from: [FailureMode, Observation]
+    to: [Cause, FailureMode]
+    labels: {en: caused by, ja: 原因}
+  DETECTED_BY:
+    from: [FailureMode, Cause, Observation]
+    to: [Sensor, Observation]
+    labels: {en: detected by, ja: 検出される}
+  FIXED_BY:
+    from: [FailureMode, Component, Cause]
+    to: [MaintenanceAction]
+    labels: {en: fixed by, ja: 対処される}
+  OCCURS_AT:
+    from: [FailureMode, Observation]
+    to: [Station, Machine]
+    labels: {en: occurs at, ja: 発生場所}
+  PREVENTS:
+    from: [Countermeasure, TPSConcept, MaintenanceAction]
+    to: [FailureMode, Cause]
+    labels: {en: prevents, ja: 防止する}

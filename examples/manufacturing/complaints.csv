@@ -1,0 +1,4 @@
+complaint_id,component,summary
+S-001,ENGINE,"HAND-WRITTEN SAMPLE. While driving on the highway the engine stall happened without warning, and the warning light came on."
+S-002,BRAKES,"HAND-WRITTEN SAMPLE. Grinding noise when braking; the dealer found brake pad wear and did a replacement."
+S-003,AIR BAGS,"HAND-WRITTEN SAMPLE. In a frontal crash the airbag failure to deploy was reported."

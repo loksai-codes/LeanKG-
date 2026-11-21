@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any, ClassVar, Protocol, runtime_checkable
 
 from leankg.config import Config
+from leankg.graph import KnowledgeGraph
 from leankg.models import Document, RunReport
 
 if TYPE_CHECKING:
@@ -34,6 +35,7 @@ class StageContext:
     llm: LLMClient | None = None
     report: RunReport = field(default_factory=RunReport)
     profiles: ProfileRegistry | None = None
+    graph: KnowledgeGraph = field(default_factory=KnowledgeGraph)
     extras: dict[str, Any] = field(default_factory=dict)
 
     def get_profiles(self) -> ProfileRegistry:

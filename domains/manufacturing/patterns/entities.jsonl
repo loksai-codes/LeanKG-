@@ -1,0 +1,8 @@
+// HAND-WRITTEN SEED PATTERNS. One JSON object per line; "lang": "en" | "ja" | "*".
+// Regex runs on NFKC-normalized text, so full-width digits/letters (Ｅ－１２３４) match too.
+// Use ASCII lookarounds instead of \b: in Python regex kana/kanji are word characters.
+{"id": "mf-error-code", "type": "Observation", "lang": "*", "pattern": "(?<![A-Za-z0-9])[EF]-?\\d{3,4}(?![A-Za-z0-9])", "confidence": 0.85}
+{"id": "mf-en-error-code-word", "type": "Observation", "lang": "en", "pattern": "(?<![A-Za-z0-9])(?:error|fault|alarm) code [A-Z]?\\d{2,5}(?![A-Za-z0-9])", "flags": "i", "confidence": 0.85}
+{"id": "mf-ja-error-code", "type": "Observation", "lang": "ja", "pattern": "(?:エラー|アラーム)(?:コード)?\\s?[A-Z]?\\d{2,5}", "confidence": 0.85}
+{"id": "mf-part-number", "type": "Component", "lang": "*", "pattern": "(?<![A-Za-z0-9])P/N\\s?[A-Z0-9][A-Z0-9-]{3,}(?![A-Za-z0-9])", "confidence": 0.8}
+{"id": "mf-ja-part-number", "type": "Component", "lang": "ja", "pattern": "部品番号\\s?[A-Z0-9][A-Z0-9-]{3,}", "confidence": 0.8}

@@ -1,0 +1,19 @@
+# Per-language model names for the health_stress pack.
+spacy:
+  en: en_core_web_sm
+  ja: ja_ginza
+# Extra spaCy NER pipelines used by the NER stage when installed (e.g. scispaCy models).
+extra_spacy:
+  en: [en_ner_bc5cdr_md]
+# Model NER label -> ontology type. Labels not listed are ignored.
+ner_label_map:
+  en: {DISEASE: Condition}
+  ja: {}
+gliner:
+  model: urchade/gliner_multi-v2.1
+  label_lang: en
+  labels:
+    en: {Condition: disease or disorder, Symptom: symptom, Stressor: source of stress, Intervention: treatment or therapy, Biomarker: biomarker, Instrument: questionnaire or scale, Outcome: health outcome}
+    ja: {Condition: 疾患, Symptom: 症状, Stressor: ストレス要因, Intervention: 治療法, Biomarker: バイオマーカー, Instrument: 評価尺度, Outcome: アウトカム}
+embeddings:
+  model: intfloat/multilingual-e5-small

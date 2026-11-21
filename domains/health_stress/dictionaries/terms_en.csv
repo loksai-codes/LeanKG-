@@ -1,0 +1,52 @@
+id,type,lang,term,synonyms,source
+# HAND-WRITTEN SEED DATA (leankg authors) - small illustrative vocabulary not a curated terminology,,,,,
+HS:stress,Stressor,en,stress,psychological stress|emotional stress,seed
+HS:work_stress,Stressor,en,work stress,job stress|occupational stress|workplace stress,seed
+HS:chronic_stress,Stressor,en,chronic stress,long-term stress,seed
+HS:financial_strain,Stressor,en,financial strain,financial stress|money worries,seed
+HS:social_isolation,Stressor,en,social isolation,loneliness,seed
+HS:shift_work,Stressor,en,shift work,night shift|night shifts,seed
+HS:sleep_deprivation,Stressor,en,sleep deprivation,lack of sleep,seed
+HS:trauma,Stressor,en,traumatic event,trauma,seed
+HS:caregiving,Stressor,en,caregiver burden,caregiving burden,seed
+HS:depression,Condition,en,depression,major depression|major depressive disorder|depressive disorder,seed
+HS:anxiety_disorder,Condition,en,anxiety disorder,generalized anxiety disorder|GAD,seed
+HS:insomnia,Condition,en,insomnia,chronic insomnia,seed
+HS:burnout,Condition,en,burnout,burnout syndrome|occupational burnout,seed
+HS:ptsd,Condition,en,post-traumatic stress disorder,PTSD|posttraumatic stress disorder,seed
+HS:hypertension,Condition,en,hypertension,high blood pressure,seed
+HS:cvd,Condition,en,cardiovascular disease,heart disease|coronary heart disease,seed
+HS:sleep_disorder,Condition,en,sleep disorder,sleep disturbance|sleep problems,seed
+HS:ibs,Condition,en,irritable bowel syndrome,IBS,seed
+HS:fatigue,Symptom,en,fatigue,tiredness|exhaustion,seed
+HS:headache,Symptom,en,headache,tension headache,seed
+HS:irritability,Symptom,en,irritability,,seed
+HS:poor_concentration,Symptom,en,poor concentration,difficulty concentrating|concentration problems,seed
+HS:anxiety,Symptom,en,anxiety,anxiousness|worry,seed
+HS:palpitations,Symptom,en,palpitations,racing heart,seed
+HS:muscle_tension,Symptom,en,muscle tension,,seed
+HS:appetite_loss,Symptom,en,loss of appetite,appetite loss,seed
+HS:rumination,Symptom,en,rumination,,seed
+HS:exercise,Intervention,en,exercise,physical activity|aerobic exercise,seed
+HS:meditation,Intervention,en,meditation,mindfulness meditation|mindfulness,seed
+HS:mbsr,Intervention,en,mindfulness-based stress reduction,MBSR,seed
+HS:cbt,Intervention,en,cognitive behavioral therapy,CBT|cognitive behavioural therapy|cognitive-behavioral therapy,seed
+HS:yoga,Intervention,en,yoga,,seed
+HS:sleep_hygiene,Intervention,en,sleep hygiene,,seed
+HS:antidepressant,Intervention,en,antidepressant,antidepressant medication|SSRI,seed
+HS:social_support,Intervention,en,social support,,seed
+HS:breathing,Intervention,en,breathing exercise,deep breathing|slow breathing,seed
+HS:cortisol,Biomarker,en,cortisol,salivary cortisol|cortisol level,seed
+HS:hrv,Biomarker,en,heart rate variability,HRV,seed
+HS:blood_pressure,Biomarker,en,blood pressure,,seed
+HS:crp,Biomarker,en,C-reactive protein,CRP,seed
+HS:il6,Biomarker,en,interleukin-6,IL-6,seed
+HS:pss,Instrument,en,Perceived Stress Scale,PSS,seed
+HS:phq9,Instrument,en,PHQ-9,Patient Health Questionnaire-9,seed
+HS:gad7,Instrument,en,GAD-7,,seed
+HS:psqi,Instrument,en,Pittsburgh Sleep Quality Index,PSQI,seed
+HS:mbi,Instrument,en,Maslach Burnout Inventory,MBI,seed
+HS:qol,Outcome,en,quality of life,QoL,seed
+HS:sick_leave,Outcome,en,sick leave,absenteeism,seed
+HS:work_performance,Outcome,en,work performance,productivity|job performance,seed
+HS:wellbeing,Outcome,en,well-being,wellbeing|mental well-being,seed

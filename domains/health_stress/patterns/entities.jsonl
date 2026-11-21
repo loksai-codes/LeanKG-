@@ -1,0 +1,6 @@
+// HAND-WRITTEN SEED PATTERNS. One JSON object per line; "lang": "en" | "ja" | "*".
+// Use ASCII lookarounds instead of \b: in Python regex kana/kanji are word characters.
+{"id": "hs-scale-code", "type": "Instrument", "lang": "*", "pattern": "(?<![A-Za-z0-9])(?:PHQ|GAD|PSS|K)-\\d{1,2}(?![A-Za-z0-9])", "confidence": 0.9}
+{"id": "hs-interleukin", "type": "Biomarker", "lang": "*", "pattern": "(?<![A-Za-z0-9])IL-\\d{1,2}(?![A-Za-z0-9])", "confidence": 0.9}
+{"id": "hs-en-scale-name", "type": "Instrument", "lang": "en", "pattern": "(?<![A-Za-z0-9])(?:[A-Z][a-z]+ ){1,4}(?:Scale|Inventory|Questionnaire|Index)(?![A-Za-z0-9])", "confidence": 0.8}
+{"id": "hs-ja-scale-name", "type": "Instrument", "lang": "ja", "pattern": "[\\u4e00-\\u9fff\\u30a0-\\u30ff]{2,12}(?:尺度|質問票|調査票)", "confidence": 0.8}

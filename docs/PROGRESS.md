@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-M1 — ingest, preprocessing, dictionary/regex entities, Neo4j (starting)
+M2 — relations by rules, negation/hedging, validation (in progress)
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -25,6 +25,27 @@ M1 — ingest, preprocessing, dictionary/regex entities, Neo4j (starting)
 4. Tooling: ruff, mypy strict, pytest markers, pre-commit, CI workflow, docker-compose
    Neo4j 5 + APOC, LICENSE (Apache-2.0), README with empty benchmark table, CHANGELOG.
 5. Typer CLI stubs: build, eval, review-llm, llm-models, import-owl.
+
+## M1 plan
+1. `lang/text.py`: char-group normalization with an offset map (NFKC can change length;
+   half-width kana + voiced marks are grouped first). `EnglishProfile` (en_core_web_sm,
+   blank fallback, rule sentence splitter, plural variants) and `JapaneseProfile`
+   (ja_ginza; fallback script-run tokenizer so JA works without the extra; splitter on
+   。！？ and newlines; normalize = NFKC → hira2kata → drop long-vowel marks after kana →
+   lowercase).
+2. Ingest: loaders TXT/MD, HTML (trafilatura), PDF (pypdf), CSV (configurable text/id
+   column), JSONL; clean whitespace; detect lang per doc and per paragraph; sentence-aware
+   chunker (800 EN / 400 JA from config), chunk breaks on language change.
+3. DomainPack: ontology.yaml, dictionaries/*.csv, patterns/entities.jsonl, models.yaml,
+   validated with `file:line` errors; loader resolves path → ./domains → repo → bundled →
+   entry points.
+4. Dictionary stage (EN PhraseMatcher LOWER + plural variants; JA Aho-Corasick on
+   normalized chars, longest-match greedy, offset map back). Regex stage on NFKC text.
+5. Basic linking (dictionary id → entity id; others by type+normalized text) so entities
+   exist; full linking is M3. `graph.py` merges entities/triples across docs.
+6. Exporters JSON/CSV/NetworkX(GraphML) + Neo4j writer (constraints, UNWIND…MERGE
+   batches of 1000, `:Entity:<Type>`, name_ja/aliases arrays, CJK full-text indexes).
+7. Seed packs (hand-written, labelled as such). `leankg build` end to end + RunReport.
 
 ## How to run the checks on THIS machine (important)
 Windows **Smart App Control is enforcing** (registry `VerifiedAndReputablePolicyState=1`).
@@ -48,8 +69,15 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   language detection, CLI stubs, tooling (ruff, mypy strict, pytest, pre-commit, CI,
   docker-compose Neo4j+APOC, LICENSE, README, CHANGELOG). 31 tests pass.
 
+- **M1** ingest/lang profiles/pack loader/dictionary+regex entities/basic linking/
+  exporters/Neo4j writer/`leankg build`. 104 unit tests + 3 Neo4j integration tests pass
+  (Docker Neo4j 5 running; WSL reaches it on localhost:7687). JA full-text (cjk analyzer)
+  returns hits for ストレス / 不眠.
+  - Note: the "50 MedlinePlus pages + 20 JA pages" target from PLAN.md is replaced by the
+    hand-written `examples/` set for now (dataset download scripts come in M3/M5).
+
 ## Next
-- M1 (see prompts/01_ingest_entities_neo4j.md).
+- M2 (see prompts/02_relations_rules.md).
 
 ## Decisions log
 - D1: `[med]` and `[ja]` stay separate extras although they currently co-resolve.

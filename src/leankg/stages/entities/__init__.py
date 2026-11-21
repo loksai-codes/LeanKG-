@@ -1,12 +1,6 @@
-"""Entities stage(s). TODO: implemented in a later milestone; no-op placeholder for now."""
+"""Entity stages, cheapest first: dictionary → regex → NER → GLiNER."""
 
-from typing import ClassVar
+from leankg.stages.entities.dictionary import DictionaryStage
+from leankg.stages.entities.regex import RegexStage
 
-from leankg.stages.base import NoOpStage
-
-
-class DictionaryStage(NoOpStage):
-    name: ClassVar[str] = "dictionary"
-
-
-__all__ = ["DictionaryStage"]
+__all__ = ["DictionaryStage", "RegexStage"]

@@ -1,0 +1,17 @@
+# Per-language model names for the manufacturing pack.
+spacy:
+  en: en_core_web_sm
+  ja: ja_ginza
+extra_spacy: {}
+# General NER labels are rarely useful here; PRODUCT names are kept as Machine candidates.
+ner_label_map:
+  en: {PRODUCT: Machine}
+  ja: {Product_Other: Machine}
+gliner:
+  model: urchade/gliner_multi-v2.1
+  label_lang: en
+  labels:
+    en: {Machine: machine or vehicle, Component: machine component, FailureMode: failure mode, Cause: failure cause, Observation: observed symptom, MaintenanceAction: maintenance action, Station: production process or station, Sensor: sensor, Countermeasure: countermeasure, TPSConcept: lean manufacturing concept}
+    ja: {Machine: 機械, Component: 部品, FailureMode: 故障モード, Cause: 故障原因, Observation: 現象, MaintenanceAction: 保全作業, Station: 工程, Sensor: センサ, Countermeasure: 対策, TPSConcept: TPS概念}
+embeddings:
+  model: intfloat/multilingual-e5-small

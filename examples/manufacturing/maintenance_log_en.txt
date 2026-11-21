@@ -1,0 +1,7 @@
+Maintenance log, press line 2 (hand-written sample)
+
+The hydraulic pump leak was caused by seal wear. Abnormal noise from the bearing was detected by the vibration sensor.
+Bearing seizure is caused by insufficient lubrication. The leak was fixed by replacement of the oil seal.
+Overheating of the motor occurred at the welding station. Error code E-1234 appeared on the CNC machine.
+Poka-yoke prevents assembly errors caused by human error. The gearbox is part of the conveyor.
+Corrosion may cause a crack in the hose.

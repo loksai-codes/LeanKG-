@@ -95,7 +95,7 @@ sentences per pack per language.
 
 ## Milestones (~14 weeks at 10–12 h/week; JA adds ~2 weeks)
 - [x] **M0 (week 1)** Repo scaffold, tooling, CI, docker-compose Neo4j, core models.
-- [ ] **M1 (weeks 2–3)** Ingest, language detection, preprocessing (EN + JA), dictionary
+- [x] **M1 (weeks 2–3)** Ingest, language detection, preprocessing (EN + JA), dictionary
       + regex entities, Neo4j writer + exporters. *Done:* 50 MedlinePlus pages + 20 JA
       pages in Neo4j as Document/Chunk/Entity.
 - [ ] **M2 (weeks 4–5)** Rule relations EN + JA, negation/hedging, schema validation,
