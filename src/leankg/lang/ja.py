@@ -190,3 +190,17 @@ class JapaneseProfile:
             return True
         ha, hb = head_unit(ua), head_unit(ub)
         return ha == ub or hb == ua or (ha is not None and ha == hb)
+
+    def negation_hedge(
+        self,
+        text: str,
+        head: tuple[int, int],
+        tail: tuple[int, int],
+        sdoc: Any = None,
+        extra_neg: list[str] | None = None,
+        extra_hedge: list[str] | None = None,
+    ) -> tuple[bool, bool, bool]:
+        """``(negated, hedged, complex)`` for a relation between two spans of ``text``."""
+        from leankg.lang import ja_rules
+
+        return ja_rules.negation_hedge(text, head, tail, sdoc, extra_neg, extra_hedge)

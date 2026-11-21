@@ -1,0 +1,137 @@
+# health_stress — English relation patterns (hand-written seed).
+# Written from en_core_web_sm parses of the example sentences (see
+# tests/fixtures/parses/). Convention: the `head` anchor is the causer/agent, the `tail`
+# anchor the affected thing; `reverse: true` on a relation swaps them for that relation.
+# Tokens are mapped to mentions directly or, if the token's subtree holds exactly one
+# mention, to that mention ("increases the risk of X" → X).
+
+dependency:
+  - id: en-cause-active
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: ["Chronic stress increases the risk of insomnia.", "Work stress causes burnout."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [cause, trigger, induce, provoke, worsen, exacerbate, increase, raise, elevate, precipitate, aggravate]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: {IN: [dobj, advmod, attr, oprd, npadvmod]}}}
+  - id: en-lead-to
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: ["Shift work leads to sleep disorder."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [lead, contribute, result, predispose]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: prep, RIGHT_ATTRS: {DEP: prep, LEMMA: {IN: [to, in]}}}
+      - {LEFT_ID: prep, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-cause-passive
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: ["Insomnia is often caused by shift work."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [cause, trigger, induce, provoke, worsen, exacerbate, precipitate, aggravate]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: agent}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-reduce-active
+    relations: [{type: REDUCES}]
+    examples: ["Regular exercise reduces anxiety in adults.", "Exercise alleviates symptoms of depression."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [reduce, lower, decrease, alleviate, relieve, ease, mitigate, attenuate, diminish, lessen, buffer, prevent, curb, counteract]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: {IN: [dobj, advmod, attr]}}}
+  - id: en-reduce-passive
+    relations: [{type: REDUCES}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [reduce, lower, decrease, alleviate, relieve, ease, mitigate, attenuate, diminish, lessen, prevent]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: agent}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-treat-active
+    relations: [{type: TREATS}, {type: REDUCES}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [treat, cure, manage, remedy]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: {IN: [dobj, attr]}}}
+  - id: en-treat-passive
+    relations: [{type: TREATS}, {type: REDUCES}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [treat, cure, manage]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: agent}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-associated
+    relations: [{type: ASSOCIATED_WITH}]
+    examples: ["Work stress is associated with burnout."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [associate, link, correlate, relate, connect, tie]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: {IN: [nsubjpass, nsubj]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: prep, RIGHT_ATTRS: {DEP: prep, LEMMA: {IN: [with, to]}}}
+      - {LEFT_ID: prep, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-measured
+    relations: [{type: MEASURED_BY}]
+    examples: ["Stress was measured with the Perceived Stress Scale."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [measure, assess, evaluate, quantify, monitor, screen, rate, score]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: prep, RIGHT_ATTRS: {DEP: {IN: [prep, agent]}, LEMMA: {IN: [with, by, using, via]}}}
+      - {LEFT_ID: prep, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-measured-using
+    relations: [{type: MEASURED_BY}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [measure, assess, evaluate, quantify, monitor, screen]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: use, RIGHT_ATTRS: {LEMMA: use}}
+      - {LEFT_ID: use, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dobj}}
+  - id: en-symptom-of
+    relations: [{type: HAS_SYMPTOM, reverse: true}]
+    examples: ["Fatigue is a common symptom of depression."]
+    pattern:
+      - {RIGHT_ID: be, RIGHT_ATTRS: {LEMMA: be}}
+      - {LEFT_ID: be, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: be, REL_OP: ">", RIGHT_ID: noun, RIGHT_ATTRS: {DEP: attr, LEMMA: {IN: [symptom, sign, feature, manifestation, hallmark]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: of, RIGHT_ATTRS: {DEP: prep, LEMMA: of}}
+      - {LEFT_ID: of, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+
+triggers:
+  - id: en-trig-increase
+    relations: [{type: INCREASES_RISK_OF}]
+    position: between
+    window: 8
+    words: [causes, cause, caused, causing, increases the risk of, increased the risk of, increase the risk of, raises the risk of, leads to, led to, lead to, triggers, triggered, trigger, contributes to, contributed to, results in, resulted in, worsens, worsened, exacerbates, exacerbated, is a risk factor for, predisposes to]
+  - id: en-trig-caused-by
+    relations: [{type: INCREASES_RISK_OF}]
+    position: between
+    order: reverse
+    window: 8
+    words: [caused by, due to, triggered by, induced by, because of, results from, resulting from, attributed to, owing to]
+  - id: en-trig-reduce
+    relations: [{type: REDUCES}]
+    position: between
+    window: 8
+    words: [reduces, reduce, reduced, reducing, lowers, lower, lowered, lowering, decreases, decreased, alleviates, alleviated, relieves, relieved, eases, eased, mitigates, mitigated, prevents, prevented, protects against, buffers against, lessens]
+  - id: en-trig-treat
+    relations: [{type: TREATS}, {type: REDUCES}]
+    position: between
+    window: 8
+    words: [treats, treat, treated, treating, is effective for, is effective against, effective treatment for, cures, cured, therapy for]
+  - id: en-trig-associated
+    relations: [{type: ASSOCIATED_WITH}]
+    position: between
+    window: 6
+    weight: 0.9
+    words: [associated with, linked to, linked with, correlated with, related to, connected to]
+  - id: en-trig-measured
+    relations: [{type: MEASURED_BY}]
+    position: between
+    window: 8
+    words: [measured with, measured by, measured using, assessed with, assessed by, assessed using, evaluated with, evaluated using, quantified with, screened with, monitored with]
+  - id: en-trig-symptom-of
+    relations: [{type: HAS_SYMPTOM, reverse: true}]
+    position: between
+    window: 6
+    words: [symptom of, symptoms of, sign of, signs of, feature of, manifestation of]
+  - id: en-trig-presents-with
+    relations: [{type: HAS_SYMPTOM}]
+    position: between
+    window: 6
+    words: [presents with, characterized by, characterised by, symptoms include, accompanied by]
+
+negation_cues: []
+hedge_cues: []

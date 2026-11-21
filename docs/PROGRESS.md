@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-M2 — relations by rules, negation/hedging, validation (in progress)
+M3 — NER, GLiNER, linking, evaluation harness (starting)
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -76,8 +76,17 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   - Note: the "50 MedlinePlus pages + 20 JA pages" target from PLAN.md is replaced by the
     hand-written `examples/` set for now (dataset download scripts come in M3/M5).
 
+- **M2** plan → done: dependency stage (patterns from real parses, saved under
+  tests/fixtures/parses), trigger stage (type-aware), cooc stage, negation stage
+  (lang/en_rules.py, lang/ja_rules.py), validate stage, relation YAMLs for both packs and
+  both languages. 207 unit tests + 4 Neo4j integration tests pass (typed relationships
+  for EN and JA, negative evidence stored with `negated: true`).
+  - Finding: en_core_web_sm misparses short headline-style sentences ("X treats Y" →
+    noun compound); the trigger lexicon covers those.
+  - Finding: GiNZA has no `Polarity=Neg`; negation is the AUX lemma ない/ず/ぬ.
+
 ## Next
-- M2 (see prompts/02_relations_rules.md).
+- M3 (see prompts/03_models_linking_eval.md).
 
 ## Decisions log
 - D1: `[med]` and `[ja]` stay separate extras although they currently co-resolve.

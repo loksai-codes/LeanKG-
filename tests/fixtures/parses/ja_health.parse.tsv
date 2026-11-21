@@ -1,0 +1,172 @@
+# 慢性ストレスは不眠のリスクを高める。
+0	慢性	慢性	NOUN	名詞-普通名詞-一般	compound	1	Reading=マンセイ
+1	ストレス	ストレス	NOUN	名詞-普通名詞-一般	nsubj	7	Reading=ストレス
+2	は	は	ADP	助詞-係助詞	case	1	Reading=ハ
+3	不眠	不眠	NOUN	名詞-普通名詞-一般	nmod	5	Reading=フミン
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	リスク	リスク	NOUN	名詞-普通名詞-一般	obj	7	Reading=リスク
+6	を	を	ADP	助詞-格助詞	case	5	Reading=ヲ
+7	高める	高める	VERB	動詞-一般	ROOT	7	Inflection=下一段-マ行;終止形-一般|Reading=タカメル
+8	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 職場ストレスは燃え尽き症候群と関連している。
+0	職場	職場	NOUN	名詞-普通名詞-一般	compound	1	Reading=ショクバ
+1	ストレス	ストレス	NOUN	名詞-普通名詞-一般	nsubj	6	Reading=ストレス
+2	は	は	ADP	助詞-係助詞	case	1	Reading=ハ
+3	燃え尽き	燃え尽きる	ADV	動詞-一般	advmod	6	Inflection=上一段-カ行;連用形-一般|Reading=モエツキ
+4	症候群	症候群	NOUN	名詞-普通名詞-一般	obl	6	Reading=ショウコウグン
+5	と	と	ADP	助詞-格助詞	case	4	Reading=ト
+6	関連	関連	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=カンレン
+7	し	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;連用形-一般|Reading=シ
+8	て	て	SCONJ	助詞-接続助詞	mark	6	Reading=テ
+9	いる	いる	VERB	動詞-非自立可能	fixed	8	Inflection=上一段-ア行;終止形-一般|Reading=イル
+10	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# 交代勤務により睡眠障害が発生する。
+0	交代勤務	交代勤務	NOUN	名詞-普通名詞-一般	obl	6	Reading=コウタイキンム
+1	に	に	ADP	助詞-格助詞	case	0	Reading=ニ
+2	より	よる	VERB	動詞-一般	fixed	1	Inflection=五段-ラ行;連用形-一般|Reading=ヨリ
+3	睡眠	睡眠	NOUN	名詞-普通名詞-サ変可能	compound	4	Reading=スイミン
+4	障害	障害	NOUN	名詞-普通名詞-サ変可能	nsubj	6	Reading=ショウガイ
+5	が	が	ADP	助詞-格助詞	case	4	Reading=ガ
+6	発生	発生	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=ハッセイ
+7	する	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;終止形-一般|Reading=スル
+8	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# うつ病は疲労を引き起こす。
+0	うつ病	うつ病	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=ウツビョウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	疲労	疲労	NOUN	名詞-普通名詞-サ変可能	obj	4	Reading=ヒロウ
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	引き起こす	引き起こす	VERB	動詞-一般	ROOT	4	Inflection=五段-サ行;終止形-一般|Reading=ヒキオコス
+5	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# 定期的な運動は不安を軽減する。
+0	定期的	定期的	ADJ	名詞-普通名詞-形状詞可能	acl	2	Reading=テイキテキ
+1	な	だ	AUX	助動詞	cop	0	Inflection=助動詞-ダ;連体形-一般|Reading=ナ
+2	運動	運動	NOUN	名詞-普通名詞-サ変可能	nsubj	6	Reading=ウンドウ
+3	は	は	ADP	助詞-係助詞	case	2	Reading=ハ
+4	不安	不安	ADJ	名詞-普通名詞-形状詞可能	obj	6	Reading=フアン
+5	を	を	ADP	助詞-格助詞	case	4	Reading=ヲ
+6	軽減	軽減	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=ケイゲン
+7	する	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;終止形-一般|Reading=スル
+8	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# 認知行動療法は不眠症を改善する。
+0	認知	認知	NOUN	名詞-普通名詞-サ変可能	compound	2	Reading=ニンチ
+1	行動	行動	NOUN	名詞-普通名詞-サ変可能	compound	2	Reading=コウドウ
+2	療法	療法	NOUN	名詞-普通名詞-一般	nsubj	6	Reading=リョウホウ
+3	は	は	ADP	助詞-係助詞	case	2	Reading=ハ
+4	不眠症	不眠症	NOUN	名詞-普通名詞-一般	obj	6	Reading=フミンショウ
+5	を	を	ADP	助詞-格助詞	case	4	Reading=ヲ
+6	改善	改善	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=カイゼン
+7	する	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;終止形-一般|Reading=スル
+8	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# 瞑想はコルチゾール値を下げる。
+0	瞑想	瞑想	NOUN	名詞-普通名詞-サ変可能	nsubj	5	Reading=メイソウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	コルチゾール	コルチゾール	NOUN	名詞-普通名詞-一般	compound	3	Reading=コルチゾール
+3	値	値	NOUN	接尾辞-名詞的-一般	obj	5	Reading=チ
+4	を	を	ADP	助詞-格助詞	case	3	Reading=ヲ
+5	下げる	下げる	VERB	動詞-一般	ROOT	5	Inflection=下一段-ガ行;終止形-一般|Reading=サゲル
+6	。	。	PUNCT	補助記号-句点	punct	5	Reading=。
+
+# 運動はストレスを軽減しなかった。
+0	運動	運動	NOUN	名詞-普通名詞-サ変可能	nsubj	4	Reading=ウンドウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	ストレス	ストレス	NOUN	名詞-普通名詞-一般	obj	4	Reading=ストレス
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	軽減	軽減	VERB	名詞-普通名詞-サ変可能	ROOT	4	Reading=ケイゲン
+5	し	する	AUX	動詞-非自立可能	aux	4	Inflection=サ行変格;未然形-一般|Reading=シ
+6	なかっ	ない	AUX	助動詞	aux	4	Inflection=助動詞-ナイ;連用形-促音便|Reading=ナカッ
+7	た	た	AUX	助動詞	aux	4	Inflection=助動詞-タ;終止形-一般|Reading=タ
+8	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# 社会的孤立がうつ病の原因である可能性がある。
+0	社会的	社会的	NOUN	名詞-普通名詞-形状詞可能	nsubj	5	Reading=シャカイテキ
+1	孤立	孤立	NOUN	名詞-普通名詞-サ変可能	compound	0	Reading=コリツ
+2	が	が	ADP	助詞-格助詞	case	0	Reading=ガ
+3	うつ病	うつ病	NOUN	名詞-普通名詞-一般	nmod	5	Reading=ウツビョウ
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	原因	原因	NOUN	名詞-普通名詞-サ変可能	acl	8	Reading=ゲンイン
+6	で	だ	AUX	助動詞	cop	5	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+7	ある	ある	VERB	動詞-非自立可能	fixed	6	Inflection=五段-ラ行;連体形-一般|Reading=アル
+8	可能性	可能性	NOUN	名詞-普通名詞-一般	nsubj	10	Reading=カノウセイ
+9	が	が	ADP	助詞-格助詞	case	8	Reading=ガ
+10	ある	ある	VERB	動詞-非自立可能	ROOT	10	Inflection=五段-ラ行;終止形-一般|Reading=アル
+11	。	。	PUNCT	補助記号-句点	punct	10	Reading=。
+
+# ストレスは知覚ストレス尺度で評価した。
+0	ストレス	ストレス	NOUN	名詞-普通名詞-一般	nsubj	6	Reading=ストレス
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	知覚	知覚	NOUN	名詞-普通名詞-サ変可能	compound	4	Reading=チカク
+3	ストレス	ストレス	NOUN	名詞-普通名詞-一般	compound	4	Reading=ストレス
+4	尺度	尺度	ADJ	名詞-普通名詞-一般	obl	6	Reading=シャクド
+5	で	で	ADP	助詞-格助詞	case	4	Reading=デ
+6	評価	評価	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=ヒョウカ
+7	し	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;連用形-一般|Reading=シ
+8	た	た	AUX	助動詞	aux	6	Inflection=助動詞-タ;終止形-一般|Reading=タ
+9	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# 不眠症は慢性ストレスに起因する。
+0	不眠症	不眠症	NOUN	名詞-普通名詞-一般	nsubj	5	Reading=フミンショウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	慢性	慢性	NOUN	名詞-普通名詞-一般	compound	3	Reading=マンセイ
+3	ストレス	ストレス	NOUN	名詞-普通名詞-一般	obl	5	Reading=ストレス
+4	に	に	ADP	助詞-格助詞	case	3	Reading=ニ
+5	起因	起因	VERB	名詞-普通名詞-サ変可能	ROOT	5	Reading=キイン
+6	する	する	AUX	動詞-非自立可能	aux	5	Inflection=サ行変格;終止形-一般|Reading=スル
+7	。	。	PUNCT	補助記号-句点	punct	5	Reading=。
+
+# 睡眠不足が頭痛を引き起こす。
+0	睡眠不足	睡眠不足	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=スイミンフソク
+1	が	が	ADP	助詞-格助詞	case	0	Reading=ガ
+2	頭痛	頭痛	NOUN	名詞-普通名詞-一般	obj	4	Reading=ズツウ
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	引き起こす	引き起こす	VERB	動詞-一般	ROOT	4	Inflection=五段-サ行;終止形-一般|Reading=ヒキオコス
+5	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# 疲労はうつ病の症状である。
+0	疲労	疲労	NOUN	名詞-普通名詞-サ変可能	nsubj	4	Reading=ヒロウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	うつ病	うつ病	NOUN	名詞-普通名詞-一般	nmod	4	Reading=ウツビョウ
+3	の	の	ADP	助詞-格助詞	case	2	Reading=ノ
+4	症状	症状	NOUN	名詞-普通名詞-一般	ROOT	4	Reading=ショウジョウ
+5	で	だ	AUX	助動詞	cop	4	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+6	ある	ある	VERB	動詞-非自立可能	fixed	5	Inflection=五段-ラ行;終止形-一般|Reading=アル
+7	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# 抗うつ薬はうつ病を治療する。
+0	抗うつ薬	抗うつ薬	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=コウウツヤク
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	うつ病	うつ病	NOUN	名詞-普通名詞-一般	obj	4	Reading=ウツビョウ
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	治療	治療	VERB	名詞-普通名詞-サ変可能	ROOT	4	Reading=チリョウ
+5	する	する	AUX	動詞-非自立可能	aux	4	Inflection=サ行変格;終止形-一般|Reading=スル
+6	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# ヨガは血圧を下げなかった。
+0	ヨガ	ヨガ	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=ヨガ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	血圧	血圧	NOUN	名詞-普通名詞-一般	obj	4	Reading=ケツアツ
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	下げ	下げる	VERB	動詞-一般	ROOT	4	Inflection=下一段-ガ行;未然形-一般|Reading=サゲ
+5	なかっ	ない	AUX	助動詞	aux	4	Inflection=助動詞-ナイ;連用形-促音便|Reading=ナカッ
+6	た	た	AUX	助動詞	aux	4	Inflection=助動詞-タ;終止形-一般|Reading=タ
+7	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# ストレスが高血圧の原因であるとは言えない。
+0	ストレス	ストレス	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=ストレス
+1	が	が	ADP	助詞-格助詞	case	0	Reading=ガ
+2	高血圧	高血圧	NOUN	名詞-普通名詞-一般	nmod	4	Reading=コウケツアツ
+3	の	の	ADP	助詞-格助詞	case	2	Reading=ノ
+4	原因	原因	NOUN	名詞-普通名詞-サ変可能	advcl	9	Reading=ゲンイン
+5	で	だ	AUX	助動詞	cop	4	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+6	ある	ある	VERB	動詞-非自立可能	fixed	5	Inflection=五段-ラ行;終止形-一般|Reading=アル
+7	と	と	ADP	助詞-格助詞	case	4	Reading=ト
+8	は	は	ADP	助詞-係助詞	case	4	Reading=ハ
+9	言え	言える	VERB	動詞-一般	ROOT	9	Inflection=下一段-ア行;未然形-一般|Reading=イエ
+10	ない	ない	AUX	助動詞	aux	9	Inflection=助動詞-ナイ;終止形-一般|Reading=ナイ
+11	。	。	PUNCT	補助記号-句点	punct	9	Reading=。
+

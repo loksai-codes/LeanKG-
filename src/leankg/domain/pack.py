@@ -133,6 +133,28 @@ class DepPattern(_Strict):
     pattern: list[dict[str, Any]]
     examples: list[str] = Field(default_factory=list)
 
+    @field_validator("pattern")
+    @classmethod
+    def _no_yaml_booleans(cls, value: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        def walk(node: Any) -> None:
+            if isinstance(node, bool):
+                raise ValueError(
+                    "pattern contains a boolean; YAML reads unquoted on/off/yes/no as "
+                    'booleans, so quote them (e.g. "on")'
+                )
+            if isinstance(node, dict):
+                for v in node.values():
+                    walk(v)
+            elif isinstance(node, list):
+                for v in node:
+                    walk(v)
+
+        walk(value)
+        names = [n.get("RIGHT_ID") for n in value]
+        if not value or any(not isinstance(n, str) for n in names):
+            raise ValueError("every pattern node needs a RIGHT_ID")
+        return value
+
 
 class TriggerRule(_Strict):
     """Trigger words for relations, with a window measured in profile units."""
@@ -140,6 +162,14 @@ class TriggerRule(_Strict):
     id: str
     relations: list[RelationChoice]
     words: list[str]
+
+    @field_validator("words", mode="before")
+    @classmethod
+    def _words_are_strings(cls, value: Any) -> Any:
+        if isinstance(value, list) and any(isinstance(w, bool) for w in value):
+            raise ValueError("trigger words contain a boolean; quote on/off/yes/no in YAML")
+        return value
+
     window: int = 6
     order: Literal["forward", "reverse"] = "forward"
     position: Literal["between", "after", "any"] = "between"

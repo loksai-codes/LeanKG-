@@ -1,0 +1,158 @@
+# manufacturing — Japanese relation patterns (hand-written seed).
+# Written from GiNZA parses in tests/fixtures/parses/ja_manufacturing.parse.tsv:
+#  * 「Xの漏れはYの摩耗が原因である」 → 原因 ROOT: nsubj 摩耗 (cause), dislocated 漏れ (effect)
+#  * 「Xを振動センサで検出した」 → 検出 VERB: obj X, obl センサ (case で)
+#  * 「YでXが発生した」 → 発生: obl Y (case で) = place, nsubj X
+#  * 「XはYの一部である」 → 一部 ROOT: nsubj X, nmod Y
+# Convention: `head` anchor = causer/agent; CAUSED_BY points effect → cause (reverse).
+
+dependency:
+  - id: ja-genin-dislocated
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: [油圧ポンプの漏れはシールの摩耗が原因である。]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [原因, 要因, 真因]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dislocated}}
+  - id: ja-genin-nmod
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: [腐食がホースの亀裂の原因である可能性がある。, 摩耗は漏れの原因ではなかった。]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [原因, 要因, 真因]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nmod}}
+  - id: ja-cause-obj
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: [過負荷がモーターの過熱を引き起こす。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [引き起こす, もたらす, 誘発, 招く, 生む]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obj}}
+  - id: ja-niyori-occur
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: [潤滑不足によりベアリングの焼き付きが発生した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [発生, 生じる, 起こる, 起きる, 破断, 破損, 故障, 停止]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obl}}
+      - {LEFT_ID: head, REL_OP: ">", RIGHT_ID: ni, RIGHT_ATTRS: {DEP: case, LEMMA: に}}
+      - {LEFT_ID: ni, REL_OP: ">", RIGHT_ID: yoru, RIGHT_ATTRS: {DEP: fixed, LEMMA: よる}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+  - id: ja-kiin
+    relations: [{type: CAUSED_BY, reverse: true}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [起因, 由来]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-detect-obl
+    relations: [{type: DETECTED_BY}]
+    examples: [ベアリングの異音を振動センサで検出した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [検出, 検知, 発見, 感知, 確認, 捕捉]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-detect-nsubj
+    relations: [{type: DETECTED_BY}]
+    examples: [振動センサが芯ずれを検知した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [検出, 検知, 発見, 感知, 捕捉]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obj}}
+  - id: ja-fixed
+    relations: [{type: FIXED_BY}]
+    examples: [漏れはオイルシールの交換で修理した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [修理, 修正, 対処, 解消, 解決, 復旧, 補修]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: {IN: [nsubj, obj]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-occurs-at
+    relations: [{type: OCCURS_AT}]
+    examples: [溶接工程でモーターの過熱が発生した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [発生, 生じる, 起こる, 起きる, 見られる, 確認]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obl}}
+      - {LEFT_ID: tail, REL_OP: ">", RIGHT_ID: de, RIGHT_ATTRS: {DEP: case, LEMMA: で}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+  - id: ja-part-of
+    relations: [{type: PART_OF}]
+    examples: [ギアボックスはコンベヤの一部である。]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [一部, 部品, 構成部品, 構成要素]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nmod}}
+  - id: ja-prevent
+    relations: [{type: PREVENTS}]
+    examples: [ポカヨケは人為的ミスを防止する。, 予防保全はベアリングの焼き付きを防ぐ。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [防止, 防ぐ, 予防, 抑制, 低減, 排除, 削減]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obj}}
+
+triggers:
+  - id: ja-trig-genin-after
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: after
+    window: 4
+    words: [の原因, の要因, の真因, を引き起こ, をもたらす, を誘発]
+  - id: ja-trig-genin-wa
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: between
+    order: reverse
+    window: 4
+    words: [の原因は, の要因は, の真因は]
+    weight: 1.05
+  - id: ja-trig-niyori-between
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: between
+    window: 4
+    words: [により, によって, による, が原因で, に起因して, のため, で]
+    weight: 0.9
+  - id: ja-trig-niyori-after
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: after
+    order: reverse
+    window: 3
+    words: [が原因, に起因, による, によるもの]
+  - id: ja-trig-detect
+    relations: [{type: DETECTED_BY}]
+    position: after
+    order: reverse
+    window: 4
+    words: [で検出, で検知, により検出, によって検出, で発見, が検出, が検知]
+  - id: ja-trig-fixed
+    relations: [{type: FIXED_BY}]
+    position: after
+    window: 4
+    words: [で修理, により修理, で対処, で解消, で解決, で復旧, を実施]
+  - id: ja-trig-occurs-at
+    relations: [{type: OCCURS_AT}]
+    position: between
+    order: reverse
+    window: 4
+    words: [で, にて, において]
+    weight: 0.8
+  - id: ja-trig-part-of
+    relations: [{type: PART_OF}]
+    position: after
+    window: 3
+    words: [の一部, の部品, の構成部品]
+  - id: ja-trig-part-no
+    relations: [{type: PART_OF}]
+    position: between
+    order: reverse
+    window: 1
+    words: [の]
+    weight: 0.75
+  - id: ja-trig-prevent
+    relations: [{type: PREVENTS}]
+    position: after
+    window: 4
+    words: [を防止, を防ぐ, を予防, を抑制, を低減, を排除, を防]
+  - id: ja-trig-has-failure
+    relations: [{type: HAS_FAILURE_MODE}]
+    position: between
+    window: 1
+    words: [の, に, が]
+    weight: 0.8
+
+negation_cues: []
+hedge_cues: []

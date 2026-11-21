@@ -1,0 +1,35 @@
+# Rule-only relation test sentences (hand-written). See relations_health_stress.yaml.
+en:
+  - {text: The hydraulic pump leak was caused by seal wear., expect: [leak > CAUSED_BY > wear]}
+  - {text: Abnormal noise from the bearing was detected by the vibration sensor., expect: [Abnormal noise > DETECTED_BY > vibration sensor]}
+  - {text: The leak was fixed by replacement of the oil seal., expect: [leak > FIXED_BY > replacement]}
+  - {text: Overheating of the motor occurred at the welding station., expect: [Overheating > OCCURS_AT > welding station]}
+  - {text: Poka-yoke prevents assembly errors caused by human error., expect: [Poka-yoke > PREVENTS > human error]}
+  - {text: The gearbox is part of the conveyor., expect: [gearbox > PART_OF > conveyor]}
+  - {text: Corrosion may cause a crack in the hose., expect: [crack > CAUSED_BY > Corrosion | hedge]}
+  - {text: Insufficient lubrication causes bearing seizure., expect: [seizure > CAUSED_BY > Insufficient lubrication]}
+  - {text: Error code E-1234 appeared on the CNC machine., expect: [E-1234 > OCCURS_AT > CNC machine]}
+  - {text: The vibration sensor detected misalignment., expect: [misalignment > DETECTED_BY > vibration sensor]}
+  - {text: The bearing suffered a seizure., expect: [bearing > HAS_FAILURE_MODE > seizure]}
+  - {text: Preventive maintenance prevents bearing seizure., expect: [Preventive maintenance > PREVENTS > seizure]}
+  - {text: Wear did not cause the leak., expect: [leak > CAUSED_BY > Wear | neg]}
+  - {text: The motor overheating was caused by overload., expect: [overheating > CAUSED_BY > overload]}
+  - {text: The leak in the hose was due to corrosion., expect: [leak > CAUSED_BY > corrosion]}
+  - {text: Misalignment was detected by the vibration sensor., expect: [Misalignment > DETECTED_BY > vibration sensor]}
+ja:
+  - {text: 油圧ポンプの漏れはシールの摩耗が原因である。, expect: [漏れ > CAUSED_BY > 摩耗, 油圧ポンプ > HAS_FAILURE_MODE > 漏れ | candidate]}
+  - {text: ベアリングの異音を振動センサで検出した。, expect: [異音 > DETECTED_BY > 振動センサ]}
+  - {text: 潤滑不足によりベアリングの焼き付きが発生した。, expect: [焼き付き > CAUSED_BY > 潤滑不足]}
+  - {text: 漏れはオイルシールの交換で修理した。, expect: [漏れ > FIXED_BY > 交換]}
+  - {text: 溶接工程でモーターの過熱が発生した。, expect: [過熱 > OCCURS_AT > 溶接工程]}
+  - {text: ポカヨケは人為的ミスを防止する。, expect: [ポカヨケ > PREVENTS > 人為的ミス]}
+  - {text: ギアボックスはコンベヤの一部である。, expect: [ギアボックス > PART_OF > コンベヤ]}
+  - {text: 腐食がホースの亀裂の原因である可能性がある。, expect: [亀裂 > CAUSED_BY > 腐食 | hedge]}
+  - {text: 過負荷がモーターの過熱を引き起こす。, expect: [過熱 > CAUSED_BY > 過負荷]}
+  - {text: 金属疲労によって主軸が破断した。, expect: [破断 > CAUSED_BY > 金属疲労]}
+  - {text: 予防保全はベアリングの焼き付きを防ぐ。, expect: [予防保全 > PREVENTS > 焼き付き]}
+  - {text: 振動センサが芯ずれを検知した。, expect: [芯ずれ > DETECTED_BY > 振動センサ]}
+  - {text: 摩耗は漏れの原因ではなかった。, expect: [漏れ > CAUSED_BY > 摩耗 | neg]}
+  - {text: 異物混入がフィルターの詰まりを引き起こした。, expect: [詰まり > CAUSED_BY > 異物混入]}
+  - {text: 漏れの原因は摩耗である。, expect: [漏れ > CAUSED_BY > 摩耗]}
+  - {text: アンドンは人為的ミスを防ぐ。, expect: [アンドン > PREVENTS > 人為的ミス]}

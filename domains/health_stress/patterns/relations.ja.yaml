@@ -1,0 +1,134 @@
+# health_stress — Japanese relation patterns (hand-written seed).
+# Written from GiNZA (ja_ginza 5.3) parses saved in tests/fixtures/parses/ja_health.parse.tsv.
+# Observations from those parses:
+#  * サ変 nouns used as predicates (軽減する, 発生する, 起因する) are tagged VERB with an aux する.
+#  * 「XがYの原因である」 → 原因 (NOUN, ROOT/acl/advcl) has nsubj X and nmod Y.
+#  * 「XによりYが発生する」 → X is obl of the verb, with case に and fixed より/よっ.
+#  * 「Yは…Xに起因する」 → X obl (case に), Y nsubj.
+# Convention: `head` anchor = causer/agent, `tail` = affected thing.
+
+dependency:
+  - id: ja-cause-obj
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: [うつ病は疲労を引き起こす。, 慢性ストレスは不眠のリスクを高める。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [引き起こす, 高める, もたらす, 誘発, 悪化, 増加, 増大, 招く, 誘う]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obj}}
+  - id: ja-niyori-occur
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: [交代勤務により睡眠障害が発生する。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [発生, 生じる, 起こる, 起きる, 悪化, 増加, 発症, 出現]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obl}}
+      - {LEFT_ID: head, REL_OP: ">", RIGHT_ID: ni, RIGHT_ATTRS: {DEP: case, LEMMA: に}}
+      - {LEFT_ID: ni, REL_OP: ">", RIGHT_ID: yoru, RIGHT_ATTRS: {DEP: fixed, LEMMA: よる}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+  - id: ja-kiin
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: [不眠症は慢性ストレスに起因する。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [起因, 由来]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-genin-nmod
+    relations: [{type: INCREASES_RISK_OF}]
+    examples: [社会的孤立がうつ病の原因である可能性がある。]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [原因, 要因, 誘因]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nmod}}
+  - id: ja-genin-dislocated
+    relations: [{type: INCREASES_RISK_OF}]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [原因, 要因]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dislocated}}
+  - id: ja-reduce
+    relations: [{type: REDUCES}]
+    examples: [定期的な運動は不安を軽減する。, 瞑想はコルチゾール値を下げる。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [軽減, 減少, 減らす, 下げる, 低下, 緩和, 抑制, 改善, 予防, 防ぐ, 防止, 和らげる]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obj}}
+  - id: ja-treat
+    relations: [{type: TREATS}, {type: REDUCES}]
+    examples: [抗うつ薬はうつ病を治療する。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [治療, 治す, 治癒]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obj}}
+  - id: ja-associated
+    relations: [{type: ASSOCIATED_WITH}]
+    examples: [職場ストレスは燃え尽き症候群と関連している。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [関連, 相関, 関係, 関与]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-measured
+    relations: [{type: MEASURED_BY}]
+    examples: [ストレスは知覚ストレス尺度で評価した。]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [評価, 測定, 計測, 判定, 評定]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: obl}}
+  - id: ja-symptom-of
+    relations: [{type: HAS_SYMPTOM, reverse: true}]
+    examples: [疲労はうつ病の症状である。]
+    pattern:
+      - {RIGHT_ID: noun, RIGHT_ATTRS: {LEMMA: {IN: [症状, 徴候, 兆候, 所見]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nmod}}
+
+# Windows count bunsetsu when GiNZA is installed, otherwise tokens.
+triggers:
+  - id: ja-trig-cause-after
+    relations: [{type: INCREASES_RISK_OF}]
+    position: after
+    window: 4
+    words: [引き起こす, 引き起こした, 引き起こされ, もたらす, 誘発, 悪化させ, を高める, リスクを高め, の原因, の要因, 増加させ, 招く]
+  - id: ja-trig-niyori-between
+    relations: [{type: INCREASES_RISK_OF}]
+    position: between
+    window: 4
+    words: [により, によって, による, が原因で, が原因となり, に起因して, に起因する, のせいで, のため]
+  - id: ja-trig-niyori-after
+    relations: [{type: INCREASES_RISK_OF}]
+    position: after
+    order: reverse
+    window: 3
+    words: [による, によるもの, に起因, が原因, に由来]
+  - id: ja-trig-reduce
+    relations: [{type: REDUCES}]
+    position: after
+    window: 4
+    words: [軽減, 減少させ, 減らす, 減らし, 下げる, 下げ, 低下させ, 緩和, 抑制, 改善, 予防, 防ぐ, 防止, 和らげ]
+  - id: ja-trig-treat
+    relations: [{type: TREATS}, {type: REDUCES}]
+    position: after
+    window: 4
+    words: [治療, 治す, に効果がある, に有効, に効く]
+  - id: ja-trig-associated
+    relations: [{type: ASSOCIATED_WITH}]
+    position: after
+    window: 4
+    weight: 0.9
+    words: [と関連, と相関, と関係, に関連]
+  - id: ja-trig-measured
+    relations: [{type: MEASURED_BY}]
+    position: after
+    window: 4
+    words: [で評価, で測定, を用いて評価, を用いて測定, で計測, により評価]
+  - id: ja-trig-symptom-between
+    relations: [{type: HAS_SYMPTOM}]
+    position: between
+    window: 4
+    words: [の症状, の主な症状, の症状として]
+  - id: ja-trig-symptom-after
+    relations: [{type: HAS_SYMPTOM, reverse: true}]
+    position: after
+    window: 3
+    words: [の症状, の症状である, の徴候]
+
+negation_cues: []
+hedge_cues: []

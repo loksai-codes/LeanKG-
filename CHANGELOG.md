@@ -6,6 +6,23 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### M2 — relations by rules, negation/hedging, validation
+- Dependency-pattern stage (spaCy `DependencyMatcher`, patterns are pack data in
+  `patterns/relations.<lang>.yaml`), with conjunct expansion and a subtree fallback
+  ("the risk of X" → X). EN and JA patterns written from real en_core_web_sm / GiNZA
+  parses (dumps in `tests/fixtures/parses/`).
+- Trigger-lexicon stage with `between` / `after` / `any` positions, windows in profile
+  units (tokens EN, bunsetsu JA) and type-aware rule choice.
+- Typed co-occurrence candidates (schema-allowed pairs only; JA restricted to
+  bunsetsu-connected pairs).
+- Negation/hedging: EN rules plus negspaCy termsets when `[med]` is installed; JA rules
+  (ない/なかった/ません…, かもしれない/可能性…, complex cases like ないとは言えない).
+- Validate & score stage: schema check with reverse/flip handling, confidence from
+  config priors/penalties, negated triples kept as negative evidence, duplicate merging
+  with `evidence_count`, provenance on every edge; typed Neo4j relationships.
+- 40 EN + 36 JA relation test sentences across both packs; pack loader rejects YAML
+  booleans in patterns (`on` → True).
+
 ### M1 — ingest, preprocessing, dictionary/regex entities, Neo4j
 - Loaders for TXT/MD, HTML (trafilatura), PDF (pypdf), CSV (configurable text/id
   column) and JSONL; UTF-8/CP932/EUC-JP decoding; whitespace cleaning.

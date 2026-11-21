@@ -1,0 +1,162 @@
+# 油圧ポンプの漏れはシールの摩耗が原因である。
+0	油圧	油圧	NOUN	名詞-普通名詞-一般	compound	1	Reading=ユアツ
+1	ポンプ	ポンプ	NOUN	名詞-普通名詞-一般	nmod	3	Reading=ポンプ
+2	の	の	ADP	助詞-格助詞	case	1	Reading=ノ
+3	漏れ	漏れ	NOUN	名詞-普通名詞-一般	dislocated	9	Reading=モレ
+4	は	は	ADP	助詞-係助詞	case	3	Reading=ハ
+5	シール	シール	NOUN	名詞-普通名詞-サ変可能	nmod	7	Reading=シール
+6	の	の	ADP	助詞-格助詞	case	5	Reading=ノ
+7	摩耗	摩耗	NOUN	名詞-普通名詞-サ変可能	nsubj	9	Reading=マモウ
+8	が	が	ADP	助詞-格助詞	case	7	Reading=ガ
+9	原因	原因	NOUN	名詞-普通名詞-サ変可能	ROOT	9	Reading=ゲンイン
+10	で	だ	AUX	助動詞	cop	9	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+11	ある	ある	VERB	動詞-非自立可能	fixed	10	Inflection=五段-ラ行;終止形-一般|Reading=アル
+12	。	。	PUNCT	補助記号-句点	punct	9	Reading=。
+
+# ベアリングの異音を振動センサで検出した。
+0	ベアリング	ベアリング	NOUN	名詞-普通名詞-一般	nmod	2	Reading=ベアリング
+1	の	の	ADP	助詞-格助詞	case	0	Reading=ノ
+2	異音	異音	NOUN	名詞-普通名詞-一般	obj	7	Reading=イオン
+3	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+4	振動	振動	VERB	名詞-普通名詞-サ変可能	compound	5	Reading=シンドウ
+5	センサ	センサ	VERB	名詞-普通名詞-一般	obl	7	Reading=センサ
+6	で	で	ADP	助詞-格助詞	case	5	Reading=デ
+7	検出	検出	VERB	名詞-普通名詞-サ変可能	ROOT	7	Reading=ケンシュツ
+8	し	する	AUX	動詞-非自立可能	aux	7	Inflection=サ行変格;連用形-一般|Reading=シ
+9	た	た	AUX	助動詞	aux	7	Inflection=助動詞-タ;終止形-一般|Reading=タ
+10	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 潤滑不足によりベアリングの焼き付きが発生した。
+0	潤滑	潤滑	NOUN	名詞-普通名詞-一般	compound	1	Reading=ジュンカツ
+1	不足	不足	NOUN	名詞-普通名詞-サ変形状詞可能	obl	8	Reading=フソク
+2	に	に	ADP	助詞-格助詞	case	1	Reading=ニ
+3	より	よる	VERB	動詞-一般	fixed	2	Inflection=五段-ラ行;連用形-一般|Reading=ヨリ
+4	ベアリング	ベアリング	NOUN	名詞-普通名詞-一般	nmod	6	Reading=ベアリング
+5	の	の	ADP	助詞-格助詞	case	4	Reading=ノ
+6	焼き付き	焼き付き	NOUN	名詞-普通名詞-一般	nsubj	8	Reading=ヤキツキ
+7	が	が	ADP	助詞-格助詞	case	6	Reading=ガ
+8	発生	発生	VERB	名詞-普通名詞-サ変可能	ROOT	8	Reading=ハッセイ
+9	し	する	AUX	動詞-非自立可能	aux	8	Inflection=サ行変格;連用形-一般|Reading=シ
+10	た	た	AUX	助動詞	aux	8	Inflection=助動詞-タ;終止形-一般|Reading=タ
+11	。	。	PUNCT	補助記号-句点	punct	8	Reading=。
+
+# 漏れはオイルシールの交換で修理した。
+0	漏れ	漏れ	NOUN	名詞-普通名詞-一般	nsubj	7	Reading=モレ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	オイル	オイル	NOUN	名詞-普通名詞-一般	compound	3	Reading=オイル
+3	シール	シール	NOUN	名詞-普通名詞-サ変可能	nmod	5	Reading=シール
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	交換	交換	NOUN	名詞-普通名詞-サ変可能	obl	7	Reading=コウカン
+6	で	で	ADP	助詞-格助詞	case	5	Reading=デ
+7	修理	修理	VERB	名詞-普通名詞-サ変可能	ROOT	7	Reading=シュウリ
+8	し	する	AUX	動詞-非自立可能	aux	7	Inflection=サ行変格;連用形-一般|Reading=シ
+9	た	た	AUX	助動詞	aux	7	Inflection=助動詞-タ;終止形-一般|Reading=タ
+10	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 溶接工程でモーターの過熱が発生した。
+0	溶接	溶接	NOUN	名詞-普通名詞-サ変可能	compound	1	Reading=ヨウセツ
+1	工程	工程	NOUN	名詞-普通名詞-一般	obl	7	Reading=コウテイ
+2	で	で	ADP	助詞-格助詞	case	1	Reading=デ
+3	モーター	モーター	NOUN	名詞-普通名詞-一般	nmod	5	Reading=モーター
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	過熱	過熱	NOUN	名詞-普通名詞-サ変可能	nsubj	7	Reading=カネツ
+6	が	が	ADP	助詞-格助詞	case	5	Reading=ガ
+7	発生	発生	VERB	名詞-普通名詞-サ変可能	ROOT	7	Reading=ハッセイ
+8	し	する	AUX	動詞-非自立可能	aux	7	Inflection=サ行変格;連用形-一般|Reading=シ
+9	た	た	AUX	助動詞	aux	7	Inflection=助動詞-タ;終止形-一般|Reading=タ
+10	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# ポカヨケは人為的ミスを防止する。
+0	ポカヨケ	ポカヨケ	NOUN	名詞-普通名詞-一般	nsubj	5	Reading=ポカヨケ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	人為的	人為的	NOUN	名詞-普通名詞-形状詞可能	obj	5	Reading=ジンイテキ
+3	ミス	ミス	NOUN	名詞-普通名詞-サ変可能	compound	2	Reading=ミス
+4	を	を	ADP	助詞-格助詞	case	2	Reading=ヲ
+5	防止	防止	VERB	名詞-普通名詞-サ変可能	ROOT	5	Reading=ボウシ
+6	する	する	AUX	動詞-非自立可能	aux	5	Inflection=サ行変格;終止形-一般|Reading=スル
+7	。	。	PUNCT	補助記号-句点	punct	5	Reading=。
+
+# ギアボックスはコンベヤの一部である。
+0	ギアボックス	ギアボックス	NOUN	名詞-普通名詞-一般	nsubj	4	Reading=ギアボックス
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	コンベヤ	コンベヤ	NOUN	名詞-普通名詞-一般	nmod	4	Reading=コンベヤ
+3	の	の	ADP	助詞-格助詞	case	2	Reading=ノ
+4	一部	一部	NOUN	名詞-普通名詞-副詞可能	ROOT	4	Reading=イチブ
+5	で	だ	AUX	助動詞	cop	4	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+6	ある	ある	VERB	動詞-非自立可能	fixed	5	Inflection=五段-ラ行;終止形-一般|Reading=アル
+7	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+
+# 腐食がホースの亀裂の原因である可能性がある。
+0	腐食	腐食	NOUN	名詞-普通名詞-サ変可能	nsubj	6	Reading=フショク
+1	が	が	ADP	助詞-格助詞	case	0	Reading=ガ
+2	ホース	ホース	NOUN	名詞-普通名詞-一般	nmod	4	Reading=ホース
+3	の	の	ADP	助詞-格助詞	case	2	Reading=ノ
+4	亀裂	亀裂	NOUN	名詞-普通名詞-サ変可能	nmod	6	Reading=キレツ
+5	の	の	ADP	助詞-格助詞	case	4	Reading=ノ
+6	原因	原因	NOUN	名詞-普通名詞-サ変可能	acl	9	Reading=ゲンイン
+7	で	だ	AUX	助動詞	cop	6	Inflection=助動詞-ダ;連用形-一般|Reading=デ
+8	ある	ある	VERB	動詞-非自立可能	fixed	7	Inflection=五段-ラ行;連体形-一般|Reading=アル
+9	可能性	可能性	NOUN	名詞-普通名詞-一般	nsubj	11	Reading=カノウセイ
+10	が	が	ADP	助詞-格助詞	case	9	Reading=ガ
+11	ある	ある	VERB	動詞-非自立可能	ROOT	11	Inflection=五段-ラ行;終止形-一般|Reading=アル
+12	。	。	PUNCT	補助記号-句点	punct	11	Reading=。
+
+# 過負荷がモーターの過熱を引き起こす。
+0	過	過	NOUN	接頭辞	compound	1	Reading=カ
+1	負荷	負荷	NOUN	名詞-普通名詞-サ変可能	nsubj	7	Reading=フカ
+2	が	が	ADP	助詞-格助詞	case	1	Reading=ガ
+3	モーター	モーター	NOUN	名詞-普通名詞-一般	nmod	5	Reading=モーター
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	過熱	過熱	NOUN	名詞-普通名詞-サ変可能	obj	7	Reading=カネツ
+6	を	を	ADP	助詞-格助詞	case	5	Reading=ヲ
+7	引き起こす	引き起こす	VERB	動詞-一般	ROOT	7	Inflection=五段-サ行;終止形-一般|Reading=ヒキオコス
+8	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 金属疲労によって主軸が破断した。
+0	金属	金属	NOUN	名詞-普通名詞-一般	compound	1	Reading=キンゾク
+1	疲労	疲労	NOUN	名詞-普通名詞-サ変可能	obl	7	Reading=ヒロウ
+2	に	に	ADP	助詞-格助詞	case	1	Reading=ニ
+3	よっ	よる	VERB	動詞-一般	fixed	2	Inflection=五段-ラ行;連用形-促音便|Reading=ヨッ
+4	て	て	SCONJ	助詞-接続助詞	fixed	2	Reading=テ
+5	主軸	主軸	NOUN	名詞-普通名詞-一般	nsubj	7	Reading=シュジク
+6	が	が	ADP	助詞-格助詞	case	5	Reading=ガ
+7	破断	破断	VERB	名詞-普通名詞-サ変可能	ROOT	7	Reading=ハダン
+8	し	する	AUX	動詞-非自立可能	aux	7	Inflection=サ行変格;連用形-一般|Reading=シ
+9	た	た	AUX	助動詞	aux	7	Inflection=助動詞-タ;終止形-一般|Reading=タ
+10	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 予防保全はベアリングの焼き付きを防ぐ。
+0	予防	予防	NOUN	名詞-普通名詞-サ変可能	compound	1	Reading=ヨボウ
+1	保全	保全	NOUN	名詞-普通名詞-サ変可能	nsubj	7	Reading=ホゼン
+2	は	は	ADP	助詞-係助詞	case	1	Reading=ハ
+3	ベアリング	ベアリング	NOUN	名詞-普通名詞-一般	nmod	5	Reading=ベアリング
+4	の	の	ADP	助詞-格助詞	case	3	Reading=ノ
+5	焼き付き	焼き付き	NOUN	名詞-普通名詞-一般	obj	7	Reading=ヤキツキ
+6	を	を	ADP	助詞-格助詞	case	5	Reading=ヲ
+7	防ぐ	防ぐ	VERB	動詞-一般	ROOT	7	Inflection=五段-ガ行;終止形-一般|Reading=フセグ
+8	。	。	PUNCT	補助記号-句点	punct	7	Reading=。
+
+# 振動センサが芯ずれを検知した。
+0	振動	振動	NOUN	名詞-普通名詞-サ変可能	compound	1	Reading=シンドウ
+1	センサ	センサ	NOUN	名詞-普通名詞-一般	nsubj	6	Reading=センサ
+2	が	が	ADP	助詞-格助詞	case	1	Reading=ガ
+3	芯	芯	NOUN	名詞-普通名詞-一般	compound	4	Reading=シン
+4	ずれ	ずれ	NOUN	名詞-普通名詞-一般	obj	6	Reading=ズレ
+5	を	を	ADP	助詞-格助詞	case	4	Reading=ヲ
+6	検知	検知	VERB	名詞-普通名詞-サ変可能	ROOT	6	Reading=ケンチ
+7	し	する	AUX	動詞-非自立可能	aux	6	Inflection=サ行変格;連用形-一般|Reading=シ
+8	た	た	AUX	助動詞	aux	6	Inflection=助動詞-タ;終止形-一般|Reading=タ
+9	。	。	PUNCT	補助記号-句点	punct	6	Reading=。
+
+# 摩耗は漏れの原因ではなかった。
+0	摩耗	摩耗	NOUN	名詞-普通名詞-サ変可能	nsubj	4	Reading=マモウ
+1	は	は	ADP	助詞-係助詞	case	0	Reading=ハ
+2	漏れ	漏れ	NOUN	名詞-普通名詞-一般	nmod	4	Reading=モレ
+3	の	の	ADP	助詞-格助詞	case	2	Reading=ノ
+4	原因	原因	NOUN	名詞-普通名詞-サ変可能	ROOT	4	Reading=ゲンイン
+5	で	で	AUX	助詞-格助詞	cop	4	Reading=デ
+6	は	は	ADP	助詞-係助詞	fixed	5	Reading=ハ
+7	なかっ	ない	AUX	形容詞-非自立可能	fixed	5	Inflection=形容詞;連用形-促音便|Reading=ナカッ
+8	た	た	AUX	助動詞	aux	4	Inflection=助動詞-タ;終止形-一般|Reading=タ
+9	。	。	PUNCT	補助記号-句点	punct	4	Reading=。
+

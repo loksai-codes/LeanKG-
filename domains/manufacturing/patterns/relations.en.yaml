@@ -1,0 +1,150 @@
+# manufacturing — English relation patterns (hand-written seed).
+# Written from en_core_web_sm parses (tests/fixtures/parses/). Convention: the `head`
+# anchor is the causer/agent; CAUSED_BY points effect → cause, hence `reverse: true`.
+
+dependency:
+  - id: en-cause-active
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: ["Corrosion may cause a crack in the hose."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [cause, trigger, induce, produce, create, generate]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: {IN: [dobj, advmod, attr, oprd]}}}
+  - id: en-cause-xcomp
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: ["Insufficient lubrication causes bearing seizure."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [cause, trigger, induce]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: x, RIGHT_ATTRS: {DEP: xcomp}}
+      - {LEFT_ID: x, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dobj}}
+  - id: en-lead-to
+    relations: [{type: CAUSED_BY, reverse: true}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [lead, contribute, result]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: prep, RIGHT_ATTRS: {DEP: prep, LEMMA: {IN: [to, in]}}}
+      - {LEFT_ID: prep, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-cause-passive
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: ["The hydraulic pump leak was caused by seal wear."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [cause, trigger, induce, produce]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: agent}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-cause-acl
+    relations: [{type: CAUSED_BY, reverse: true}]
+    examples: ["Poka-yoke prevents assembly errors caused by human error."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {DEP: acl, LEMMA: {IN: [cause, trigger, induce]}}}
+      - {LEFT_ID: verb, REL_OP: "<", RIGHT_ID: tail, RIGHT_ATTRS: {}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: agent}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-detected-passive
+    relations: [{type: DETECTED_BY}]
+    examples: ["Abnormal noise from the bearing was detected by the vibration sensor."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [detect, identify, spot, catch, find, discover, sense, notice, reveal, pick]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: {IN: [agent, prep]}, LEMMA: {IN: [by, with, using, via]}}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-detects-active
+    relations: [{type: DETECTED_BY}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [detect, identify, sense, catch, pick, flag]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: dobj}}
+  - id: en-fixed-passive
+    relations: [{type: FIXED_BY}]
+    examples: ["The leak was fixed by replacement of the oil seal."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [fix, repair, resolve, correct, remedy, address, solve, cure, rectify, eliminate]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubjpass}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: agent, RIGHT_ATTRS: {DEP: {IN: [agent, prep]}, LEMMA: {IN: [by, with, through, via]}}}
+      - {LEFT_ID: agent, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-occurs-at
+    relations: [{type: OCCURS_AT}]
+    examples: ["Overheating of the motor occurred at the welding station."]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [occur, happen, appear, arise, develop, start, begin, recur]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: prep, RIGHT_ATTRS: {DEP: prep, LEMMA: {IN: [at, in, "on", during]}}}
+      - {LEFT_ID: prep, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-part-of
+    relations: [{type: PART_OF}]
+    examples: ["The gearbox is part of the conveyor."]
+    pattern:
+      - {RIGHT_ID: be, RIGHT_ATTRS: {LEMMA: be}}
+      - {LEFT_ID: be, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: be, REL_OP: ">", RIGHT_ID: noun, RIGHT_ATTRS: {DEP: attr, LEMMA: {IN: [part, component, element, piece, subassembly]}}}
+      - {LEFT_ID: noun, REL_OP: ">", RIGHT_ID: of, RIGHT_ATTRS: {DEP: prep, LEMMA: of}}
+      - {LEFT_ID: of, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: pobj}}
+  - id: en-prevent-active
+    relations: [{type: PREVENTS}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {POS: VERB, LEMMA: {IN: [prevent, avoid, eliminate, stop, reduce, minimize, minimise]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dobj}}
+  - id: en-has-failure
+    relations: [{type: HAS_FAILURE_MODE}]
+    pattern:
+      - {RIGHT_ID: verb, RIGHT_ATTRS: {LEMMA: {IN: [suffer, experience, exhibit, show, develop, have]}}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: head, RIGHT_ATTRS: {DEP: nsubj}}
+      - {LEFT_ID: verb, REL_OP: ">", RIGHT_ID: tail, RIGHT_ATTRS: {DEP: dobj}}
+
+triggers:
+  - id: en-trig-causes
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: between
+    window: 8
+    words: [causes, cause, caused, causing, leads to, led to, results in, resulted in, triggers, triggered, produces, produced]
+  - id: en-trig-caused-by
+    relations: [{type: CAUSED_BY, reverse: true}]
+    position: between
+    order: reverse
+    window: 8
+    words: [caused by, due to, because of, resulting from, results from, triggered by, induced by, attributed to, owing to, from]
+    weight: 0.95
+  - id: en-trig-detected
+    relations: [{type: DETECTED_BY}]
+    position: between
+    window: 8
+    words: [detected by, detected with, identified by, picked up by, spotted by, flagged by, found by]
+  - id: en-trig-detects
+    relations: [{type: DETECTED_BY}]
+    position: between
+    order: reverse
+    window: 6
+    words: [detects, detected, sensed, flagged]
+  - id: en-trig-fixed
+    relations: [{type: FIXED_BY}]
+    position: between
+    window: 8
+    words: [fixed by, repaired by, resolved by, corrected by, remedied by, fixed with, repaired with, resolved with]
+  - id: en-trig-occurs-at
+    relations: [{type: OCCURS_AT}]
+    position: between
+    window: 8
+    words: [occurred at, occurs at, occurred in, occurs in, occurred on, appeared on, appears on, happened at, happened on, at the, on the]
+    weight: 0.8
+  - id: en-trig-part-of
+    relations: [{type: PART_OF}]
+    position: between
+    window: 6
+    words: [part of, component of, mounted on, attached to, inside the, in the]
+    weight: 0.8
+  - id: en-trig-prevents
+    relations: [{type: PREVENTS}]
+    position: between
+    window: 8
+    words: [prevents, prevented, prevent, avoids, eliminates, stops, reduces, guards against, protects against]
+  - id: en-trig-has-failure
+    relations: [{type: HAS_FAILURE_MODE}]
+    position: between
+    window: 4
+    weight: 0.85
+    words: [suffered, suffers, experienced, showed, shows, developed, has a, had a, with a]
+
+negation_cues: []
+hedge_cues: []

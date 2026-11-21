@@ -98,7 +98,7 @@ sentences per pack per language.
 - [x] **M1 (weeks 2–3)** Ingest, language detection, preprocessing (EN + JA), dictionary
       + regex entities, Neo4j writer + exporters. *Done:* 50 MedlinePlus pages + 20 JA
       pages in Neo4j as Document/Chunk/Entity.
-- [ ] **M2 (weeks 4–5)** Rule relations EN + JA, negation/hedging, schema validation,
+- [x] **M2 (weeks 4–5)** Rule relations EN + JA, negation/hedging, schema validation,
       provenance. *Done:* browsable triples in Neo4j Bloom for both languages.
 - [ ] **M3 (weeks 6–7)** NER, GLiNER multilingual, fuzzy + multilingual embedding linking,
       confidence scores, eval harness. *Done:* first gold sets, setups A and B reported.

@@ -105,3 +105,17 @@ class EnglishProfile:
     def connected(self, doc: Any, a: Any, b: Any) -> bool | None:
         """English places no parse restriction on co-occurrence pairs."""
         return None
+
+    def negation_hedge(
+        self,
+        text: str,
+        head: tuple[int, int],
+        tail: tuple[int, int],
+        sdoc: Any = None,
+        extra_neg: list[str] | None = None,
+        extra_hedge: list[str] | None = None,
+    ) -> tuple[bool, bool, bool]:
+        """``(negated, hedged, complex)`` for a relation between two spans of ``text``."""
+        from leankg.lang import en_rules
+
+        return en_rules.negation_hedge(text, head, tail, sdoc, extra_neg, extra_hedge)

@@ -71,6 +71,23 @@ def test_cjk_fulltext_index_finds_japanese(writer: Neo4jWriter) -> None:
     assert any(h["id"] == "HS:insomnia" for h in hits)
 
 
+def test_typed_relationships_for_both_languages(writer: Neo4jWriter) -> None:
+    rows = writer.run(
+        "MATCH (h:Entity)-[r]->(t:Entity) WHERE r.status IN ['accepted', 'negative'] "
+        "UNWIND r.langs AS lang RETURN lang, type(r) AS rel, count(*) AS n, "
+        "collect(r.method)[0] AS method, collect(r.provenance_json)[0] AS prov"
+    )
+    langs = {r["lang"] for r in rows}
+    assert langs == {"en", "ja"}
+    assert all(r["prov"] and r["method"] for r in rows)
+    neg = writer.run(
+        "MATCH (:Entity {id: 'HS:exercise'})-[r:REDUCES {negated: true}]->(:Entity {id: 'HS:stress'}) "
+        "RETURN r.status AS status"
+    )
+    assert neg
+    assert neg[0]["status"] == "negative"
+
+
 def test_rewrite_is_idempotent(writer: Neo4jWriter) -> None:
     before = writer.run("MATCH (n) RETURN count(n) AS n")[0]["n"]
     pipe = Pipeline.from_domain("health_stress", llm="none")

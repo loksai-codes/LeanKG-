@@ -1,0 +1,49 @@
+# Rule-only relation test sentences (hand-written). Each expectation is
+# "head > RELATION > tail" with optional flags: neg, hedge, complex, candidate.
+# Without "candidate"/"complex" the triple must be accepted (or negative when "neg").
+en:
+  - {text: Chronic stress increases the risk of insomnia., expect: [Chronic stress > INCREASES_RISK_OF > insomnia]}
+  - {text: Work stress causes burnout., expect: [Work stress > INCREASES_RISK_OF > burnout]}
+  - {text: Insomnia is often caused by shift work., expect: [shift work > INCREASES_RISK_OF > Insomnia]}
+  - {text: Depression causes fatigue and loss of appetite., expect: [Depression > INCREASES_RISK_OF > fatigue, Depression > INCREASES_RISK_OF > loss of appetite]}
+  - {text: Regular exercise reduces anxiety in adults., expect: [exercise > REDUCES > anxiety]}
+  - {text: Cognitive behavioral therapy treats insomnia., expect: [Cognitive behavioral therapy > TREATS > insomnia]}
+  - {text: Mindfulness meditation lowers cortisol levels., expect: [Mindfulness meditation > REDUCES > cortisol levels]}
+  - {text: Yoga did not reduce blood pressure., expect: [Yoga > REDUCES > blood pressure | neg]}
+  - {text: Social isolation may increase the risk of depression., expect: [Social isolation > INCREASES_RISK_OF > depression | hedge]}
+  - {text: Work stress is associated with burnout., expect: [Work stress > ASSOCIATED_WITH > burnout]}
+  - {text: Stress was measured with the Perceived Stress Scale., expect: [Stress > MEASURED_BY > Perceived Stress Scale]}
+  - {text: Fatigue is a common symptom of depression., expect: [depression > HAS_SYMPTOM > Fatigue]}
+  - {text: Shift work leads to sleep disorder., expect: [Shift work > INCREASES_RISK_OF > sleep disorder]}
+  - {text: Exercise alleviates symptoms of depression., expect: [Exercise > REDUCES > depression]}
+  - {text: Caregiver burden increases the risk of depression., expect: [Caregiver burden > INCREASES_RISK_OF > depression]}
+  - {text: Exercise did not reduce fatigue., expect: [Exercise > REDUCES > fatigue | neg]}
+  - {text: CBT may reduce insomnia., expect: [CBT > REDUCES > insomnia | hedge]}
+  - {text: Sleep deprivation is associated with irritability., expect: [Sleep deprivation > ASSOCIATED_WITH > irritability]}
+  - {text: Burnout was assessed with the Maslach Burnout Inventory., expect: [Burnout > MEASURED_BY > Maslach Burnout Inventory]}
+  - {text: Mindfulness meditation alleviates anxiety and rumination., expect: [Mindfulness meditation > REDUCES > anxiety, Mindfulness meditation > REDUCES > rumination]}
+  - {text: Antidepressants treat depression in adults., expect: [Antidepressants > TREATS > depression]}
+  - {text: Headache is a sign of hypertension., expect: [hypertension > HAS_SYMPTOM > Headache]}
+  - {text: Financial strain contributes to anxiety disorder., expect: [Financial strain > INCREASES_RISK_OF > anxiety disorder]}
+  - {text: It cannot be ruled out that shift work causes hypertension., expect: [shift work > INCREASES_RISK_OF > hypertension | complex]}
+ja:
+  - {text: 慢性ストレスは不眠のリスクを高める。, expect: [慢性ストレス > INCREASES_RISK_OF > 不眠]}
+  - {text: 職場ストレスは燃え尽き症候群と関連している。, expect: [職場ストレス > ASSOCIATED_WITH > 燃え尽き症候群]}
+  - {text: 交代勤務により睡眠障害が発生する。, expect: [交代勤務 > INCREASES_RISK_OF > 睡眠障害]}
+  - {text: うつ病は疲労を引き起こす。, expect: [うつ病 > INCREASES_RISK_OF > 疲労]}
+  - {text: 定期的な運動は不安を軽減する。, expect: [運動 > REDUCES > 不安]}
+  - {text: 認知行動療法は不眠症を改善する。, expect: [認知行動療法 > REDUCES > 不眠症]}
+  - {text: 瞑想はコルチゾール値を下げる。, expect: [瞑想 > REDUCES > コルチゾール値]}
+  - {text: 運動はストレスを軽減しなかった。, expect: [運動 > REDUCES > ストレス | neg]}
+  - {text: 社会的孤立がうつ病の原因である可能性がある。, expect: [社会的孤立 > INCREASES_RISK_OF > うつ病 | hedge]}
+  - {text: ストレスは知覚ストレス尺度で評価した。, expect: [ストレス > MEASURED_BY > 知覚ストレス尺度]}
+  - {text: 不眠症は慢性ストレスに起因する。, expect: [慢性ストレス > INCREASES_RISK_OF > 不眠症]}
+  - {text: 睡眠不足が頭痛を引き起こす。, expect: [睡眠不足 > INCREASES_RISK_OF > 頭痛]}
+  - {text: 疲労はうつ病の症状である。, expect: [うつ病 > HAS_SYMPTOM > 疲労]}
+  - {text: 抗うつ薬はうつ病を治療する。, expect: [抗うつ薬 > TREATS > うつ病]}
+  - {text: ヨガは血圧を下げなかった。, expect: [ヨガ > REDUCES > 血圧 | neg]}
+  - {text: ストレスが高血圧の原因であるとは言えない。, expect: [ストレス > INCREASES_RISK_OF > 高血圧 | complex]}
+  - {text: 睡眠衛生は不眠を改善する。, expect: [睡眠衛生 > REDUCES > 不眠]}
+  - {text: 交代勤務は睡眠障害のリスクを高める可能性がある。, expect: [交代勤務 > INCREASES_RISK_OF > 睡眠障害 | hedge candidate]}
+  - {text: 瞑想は不安を軽減しなかった。, expect: [瞑想 > REDUCES > 不安 | neg]}
+  - {text: 社会的支援は職場ストレスを和らげる。, expect: [社会的支援 > REDUCES > 職場ストレス]}

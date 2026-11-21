@@ -1,12 +1,8 @@
-"""Relations stage(s). TODO: implemented in a later milestone; no-op placeholder for now."""
+"""Relation stages: dependency patterns → trigger lexicon → typed co-occurrence → negation."""
 
-from typing import ClassVar
+from leankg.stages.relations.cooc import CoocStage
+from leankg.stages.relations.dependency import DependencyStage
+from leankg.stages.relations.negation import NegationStage
+from leankg.stages.relations.trigger import TriggerStage
 
-from leankg.stages.base import NoOpStage
-
-
-class DependencyStage(NoOpStage):
-    name: ClassVar[str] = "dependency"
-
-
-__all__ = ["DependencyStage"]
+__all__ = ["CoocStage", "DependencyStage", "NegationStage", "TriggerStage"]
