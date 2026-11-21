@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-M5 — manufacturing pack (starting); M4 live run pending Groq key
+M6 — polish and publish (starting); M4 live run pending Groq key
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -111,8 +111,16 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   - Still to do with a key: live integration tests, eval setups C and D, README table,
     second-build cache check.
 
+- **M5** manufacturing pack with no `src/` changes: DATA.md, MaintIE/NHTSA/JA-Wikipedia
+  scripts (all verified to download), MaintIE converter, demo_queries.cypher, 100 JA
+  sentences per pack for Label Studio (config + pre-annotated tasks). MaintIE (EN, 1,076
+  texts): entity F1 0.29 (P 0.78 / R 0.18), relation F1 0.00 — terse work-order style,
+  approximate type mapping; NCBI still 0.00 without GLiNER/scispaCy.
+  - import-owl skipped in M5 (would be an engine change) → M6.
+  - NHTSA info page blocks automated reading; the API itself works. Confirm terms.
+
 ## Next
-- M5 (see prompts/05_manufacturing_pack.md).
+- M6 (see prompts/06_polish_publish.md).
 
 ## Groq docs check (2026-11-21, for M4)
 - docs/GROQ.md is still accurate: gpt-oss-20b ($0.075/$0.30) and gpt-oss-120b ($0.15/$0.60)

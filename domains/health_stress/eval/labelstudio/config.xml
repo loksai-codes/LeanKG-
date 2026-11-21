@@ -1,0 +1,22 @@
+<View>
+  <Header value="leankg / health_stress / ja"/>
+  <Relations choice="multiple">
+    <Relation value="HAS_SYMPTOM"/>
+    <Relation value="INCREASES_RISK_OF"/>
+    <Relation value="REDUCES"/>
+    <Relation value="TREATS"/>
+    <Relation value="MEASURED_BY"/>
+    <Relation value="ASSOCIATED_WITH"/>
+    <Relation value="negated"/>
+  </Relations>
+  <Labels name="label" toName="text">
+    <Label value="Condition" hint="疾患" background="#e6194b"/>
+    <Label value="Symptom" hint="症状" background="#3cb44b"/>
+    <Label value="Stressor" hint="ストレス要因" background="#4363d8"/>
+    <Label value="Intervention" hint="介入" background="#f58231"/>
+    <Label value="Biomarker" hint="バイオマーカー" background="#911eb4"/>
+    <Label value="Instrument" hint="評価尺度" background="#46a5a5"/>
+    <Label value="Outcome" hint="アウトカム" background="#f032e6"/>
+  </Labels>
+  <Text name="text" value="$text" granularity="symbol"/>
+</View>

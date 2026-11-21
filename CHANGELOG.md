@@ -6,6 +6,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### M5 — manufacturing pack (no engine changes)
+- `git diff --stat src/` is empty for this milestone; everything lives in
+  `domains/manufacturing/` (plus tests).
+- Data download scripts with licence notes in `DATA.md`: MaintIE gold (MIT) + converter
+  to the gold format, NHTSA complaints API → CSV, Japanese Wikipedia TPS articles
+  (CC BY-SA 4.0, attribution header per file). MLIT recall data not used (terms unclear).
+- `demo_queries.cypher`: Japanese full-text lookup, graph なぜなぜ分析 over CAUSED_BY
+  chains, failure/fix tables with provenance, vector "seen this defect before?",
+  negative evidence, TPS concepts.
+- Label Studio set: 100 unlabelled Japanese sentences per pack with config and
+  pre-annotated task files (`eval/labelstudio/`).
+- `import-owl` deliberately not done here (engine change); moved to M6.
+
 ### M4 — Groq LLM fallback (code complete; live run pending an API key)
 - Router stage implementing the PLAN.md hard-case rules with a `reason` enum
   (`no_rule_relation`, `ambiguous_link`, `low_confidence`, `complex_negation`,

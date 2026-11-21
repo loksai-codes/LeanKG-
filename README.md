@@ -49,6 +49,8 @@ C and D need a Groq key and are not run yet.
 | manufacturing | ja | A rules | seed (18) | 0.96 | 0.78 | 0% | $0 |
 | manufacturing | ja | B rules+models | seed (18) | 0.96 | 0.78 | 0% | $0 |
 | health_stress | en | A rules | NCBI Disease test, 400 sents (Condition only) | 0.00 | – | 0% | $0 |
+| manufacturing | en | A rules | MaintIE gold, 1,076 texts (mapped types) | 0.29 (P 0.78, R 0.18) | 0.00 | 0% | $0 |
+| manufacturing | en | B rules+models | MaintIE gold, 1,076 texts (mapped types) | 0.29 | 0.00 | 0% | $0 |
 | any | en/ja | C leankg (Groq fallback) | | pending key | | | |
 | any | en/ja | D Groq only | | pending key | | | |
 

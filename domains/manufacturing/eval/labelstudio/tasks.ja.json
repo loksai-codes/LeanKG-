@@ -1,0 +1,4327 @@
+[
+  {
+    "data": {
+      "id": "ma-ja-001",
+      "lang": "ja",
+      "text": "油圧ポンプから作動油が漏れていたため、シールを交換した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "油圧ポンプ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 13,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 19,
+              "end": 22,
+              "text": "シール",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 23,
+              "end": 25,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-002",
+      "lang": "ja",
+      "text": "ベアリングの摩耗が進み、異音が発生した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "ベアリング",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 8,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-003",
+      "lang": "ja",
+      "text": "振動センサの値が上昇し、主軸の芯ずれが疑われた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "振動センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "主軸",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 15,
+              "end": 18,
+              "text": "芯ずれ",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-004",
+      "lang": "ja",
+      "text": "コンベヤのベルトが摩耗して滑りが生じた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "コンベヤ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "ベルト",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-005",
+      "lang": "ja",
+      "text": "過負荷によりモーターが過熱し、ラインが停止した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "過負荷",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "モータ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 13,
+              "text": "過熱",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e2",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-006",
+      "lang": "ja",
+      "text": "潤滑不足が原因でギアボックスに焼き付きが起きた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "潤滑不足",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 14,
+              "text": "ギアボックス",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 15,
+              "end": 19,
+              "text": "焼き付き",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e2",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-007",
+      "lang": "ja",
+      "text": "異物混入によってフィルターが詰まった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "異物混入",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "フィルタ",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-008",
+      "lang": "ja",
+      "text": "溶接工程でロボットのケーブルが断線した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "溶接工程",
+              "labels": [
+                "Station"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "ロボット",
+              "labels": [
+                "Machine"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-009",
+      "lang": "ja",
+      "text": "塗装工程の圧縮機から異音がするとの報告があった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "塗装工程",
+              "labels": [
+                "Station"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "圧縮機",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-010",
+      "lang": "ja",
+      "text": "プレスラインで金型の亀裂が見つかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "プレスライン",
+              "labels": [
+                "Station"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "亀裂",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-011",
+      "lang": "ja",
+      "text": "バルブの腐食が漏れの原因と考えられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "バルブ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "腐食",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-012",
+      "lang": "ja",
+      "text": "ホースの劣化により油圧が低下した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "ホース",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-013",
+      "lang": "ja",
+      "text": "温度センサが異常な温度上昇を検知した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "温度センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 13,
+              "text": "温度上昇",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "DETECTED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-014",
+      "lang": "ja",
+      "text": "ボルトの緩みが振動の原因であった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "ボルトの緩み",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-015",
+      "lang": "ja",
+      "text": "点検の結果、ブレーキパッドの摩耗は基準内だった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "点検",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 13,
+              "text": "ブレーキパッド",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 14,
+              "end": 16,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-016",
+      "lang": "ja",
+      "text": "エンジンの不調は燃料ポンプの故障によるものではなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 13,
+              "text": "燃料ポンプ",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-017",
+      "lang": "ja",
+      "text": "モーターの絶縁不良が短絡を引き起こした可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "モータ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "短絡",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-018",
+      "lang": "ja",
+      "text": "コンプレッサーの吐出圧力が下がったため、フィルターを清掃した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "コンプレッサ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 20,
+              "end": 24,
+              "text": "フィルタ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 26,
+              "end": 28,
+              "text": "清掃",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-019",
+      "lang": "ja",
+      "text": "主軸の異常振動は芯ずれが原因だった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "主軸",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "異常振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 11,
+              "text": "芯ずれ",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-020",
+      "lang": "ja",
+      "text": "射出成形機のヒーターが故障し、成形不良が増えた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "射出成形機",
+              "labels": [
+                "Machine"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-021",
+      "lang": "ja",
+      "text": "ポカヨケを導入してから組付けミスがなくなった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ポカヨケ",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-022",
+      "lang": "ja",
+      "text": "アンドンが点灯したので、作業者がラインを止めた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "アンドン",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-023",
+      "lang": "ja",
+      "text": "なぜなぜ分析により、真因は潤滑油の劣化と特定された。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "なぜなぜ分析",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-024",
+      "lang": "ja",
+      "text": "かんばん方式で過剰在庫を削減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "かんばん方式",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-025",
+      "lang": "ja",
+      "text": "自働化により不良品の後工程への流出を防いだ。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "自働化",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-026",
+      "lang": "ja",
+      "text": "組立ラインで部品の欠品が発生した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "組立ライン",
+              "labels": [
+                "Station"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-027",
+      "lang": "ja",
+      "text": "シールの硬化が油漏れにつながった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "シール",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 10,
+              "text": "油漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-028",
+      "lang": "ja",
+      "text": "ギアの歯が欠けて騒音が大きくなった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": []
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-029",
+      "lang": "ja",
+      "text": "冷却ファンの停止がオーバーヒートの原因だった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 16,
+              "text": "オーバーヒート",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-030",
+      "lang": "ja",
+      "text": "タイミングベルトの破断でエンジンが停止した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 8,
+              "text": "タイミングベルト",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "破断",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 16,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-031",
+      "lang": "ja",
+      "text": "エアバッグが展開しなかったとの苦情が寄せられた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "エアバッグ",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-032",
+      "lang": "ja",
+      "text": "ブレーキの効きが悪いとの申告があり、ブレーキパッドを交換した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ブレーキ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 18,
+              "end": 25,
+              "text": "ブレーキパッド",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 26,
+              "end": 28,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-033",
+      "lang": "ja",
+      "text": "画像センサが傷のある製品を検出した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "画像センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-034",
+      "lang": "ja",
+      "text": "定期的な給油でベアリングの焼き付きを防いでいる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "給油",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 12,
+              "text": "ベアリング",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 17,
+              "text": "焼き付き",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "PREVENTS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-035",
+      "lang": "ja",
+      "text": "増し締めを行った後、振動は収まった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "増し締め",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-036",
+      "lang": "ja",
+      "text": "電磁弁の作動不良がシリンダーの動作遅れを招いた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "電磁弁",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-037",
+      "lang": "ja",
+      "text": "圧力センサの故障で誤った警報が出た。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "圧力センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-038",
+      "lang": "ja",
+      "text": "主軸受けの交換後も異音は消えなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 1,
+              "end": 4,
+              "text": "軸受け",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-039",
+      "lang": "ja",
+      "text": "摩耗した部品を交換して漏れを修理した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 13,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 14,
+              "end": 16,
+              "text": "修理",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-040",
+      "lang": "ja",
+      "text": "オイルフィルターの目詰まりが油圧低下の要因とみられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "オイルフィルタ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 13,
+              "text": "詰まり",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 14,
+              "end": 18,
+              "text": "油圧低下",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "from_id": "e2",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-041",
+      "lang": "ja",
+      "text": "コンベヤのモーターが過熱して停止した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "コンベヤ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "モータ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "過熱",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-042",
+      "lang": "ja",
+      "text": "溶接ロボットのトーチが摩耗していた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "溶接ロボット",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 13,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-043",
+      "lang": "ja",
+      "text": "チェックリストを使って始業点検を行った。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "チェックリスト",
+              "labels": [
+                "Countermeasure"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "点検",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-044",
+      "lang": "ja",
+      "text": "予防保全の計画に従ってベアリングを交換した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "予防保全",
+              "labels": [
+                "Countermeasure"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 16,
+              "text": "ベアリング",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 17,
+              "end": 19,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-045",
+      "lang": "ja",
+      "text": "潤滑油の不足が摩耗を早めた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-046",
+      "lang": "ja",
+      "text": "パッキンの劣化により冷却水が漏れた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "パッキン",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 14,
+              "end": 16,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-047",
+      "lang": "ja",
+      "text": "ギアボックスの油量不足が焼き付きを引き起こした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "ギアボックス",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 16,
+              "text": "焼き付き",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-048",
+      "lang": "ja",
+      "text": "異常振動を検知したため、設備を停止した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "異常振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-049",
+      "lang": "ja",
+      "text": "腐食したボルトが破断した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "腐食",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "破断",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-050",
+      "lang": "ja",
+      "text": "ホースの亀裂から作動油が噴き出した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "ホース",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "亀裂",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-051",
+      "lang": "ja",
+      "text": "主軸の過熱は冷却不足によるものと推定される。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "主軸",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "過熱",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-052",
+      "lang": "ja",
+      "text": "ベルトの張りが弱く、滑りが発生した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "ベルト",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-053",
+      "lang": "ja",
+      "text": "金属疲労がアームの破断の原因である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "金属疲労",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "破断",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-054",
+      "lang": "ja",
+      "text": "センサの汚れが誤検知を引き起こした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "センサ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-055",
+      "lang": "ja",
+      "text": "清掃後、カメラの誤検知はなくなった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "清掃",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 7,
+              "text": "カメラ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-056",
+      "lang": "ja",
+      "text": "プレス機の油圧ポンプを分解点検した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "プレス機",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 10,
+              "text": "油圧ポンプ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "点検",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-057",
+      "lang": "ja",
+      "text": "モーターのベアリングから異音が出ている。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "モータ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 10,
+              "text": "ベアリング",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-058",
+      "lang": "ja",
+      "text": "作業ミスによりボルトの締め付けが不足した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "作業ミス",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-059",
+      "lang": "ja",
+      "text": "ヒューマンエラーを防ぐため、ポカヨケ治具を設置した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "ヒューマンエラ",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 14,
+              "end": 18,
+              "text": "ポカヨケ",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-060",
+      "lang": "ja",
+      "text": "エンジン警告灯が点灯したが、故障は見つからなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 7,
+              "text": "警告灯",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-061",
+      "lang": "ja",
+      "text": "燃料ポンプの不具合でエンストが発生した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "燃料ポンプ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 14,
+              "text": "エンスト",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-062",
+      "lang": "ja",
+      "text": "走行中にエンジンが停止したとの苦情があった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-063",
+      "lang": "ja",
+      "text": "ブレーキホースの腐食が液漏れを招いた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ブレーキ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 7,
+              "text": "ホース",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "腐食",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e3",
+            "to_id": "e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-064",
+      "lang": "ja",
+      "text": "エアバッグの不展開は配線の断線が原因だった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "エアバッグ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "不展開",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-065",
+      "lang": "ja",
+      "text": "減速機の油漏れはオイルシールの損傷によるものだった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "減速機",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 7,
+              "text": "油漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 14,
+              "text": "オイルシール",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-066",
+      "lang": "ja",
+      "text": "コンプレッサーの過熱は吸気フィルターの詰まりが原因とみられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "コンプレッサ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "過熱",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 17,
+              "text": "フィルタ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 19,
+              "end": 22,
+              "text": "詰まり",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e3",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-067",
+      "lang": "ja",
+      "text": "ロボットの関節で異音がしたため、グリスアップした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ロボット",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 16,
+              "end": 22,
+              "text": "グリスアップ",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-068",
+      "lang": "ja",
+      "text": "塗装ラインのノズル詰まりを清掃で解消した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "塗装ライン",
+              "labels": [
+                "Station"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 12,
+              "text": "詰まり",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "清掃",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "FIXED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-069",
+      "lang": "ja",
+      "text": "温度上昇の原因はファンの故障ではなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "温度上昇",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-070",
+      "lang": "ja",
+      "text": "振動の増加はベアリングの損傷を示唆している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 11,
+              "text": "ベアリング",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-071",
+      "lang": "ja",
+      "text": "バルブの交換で漏れは止まった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "バルブ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-072",
+      "lang": "ja",
+      "text": "主軸の芯出しを行い、振動を低減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "主軸",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-073",
+      "lang": "ja",
+      "text": "過負荷運転がモーターの寿命を縮めた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "過負荷",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "モータ",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-074",
+      "lang": "ja",
+      "text": "異物の噛み込みでコンベヤが停止した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "異物",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "コンベヤ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-075",
+      "lang": "ja",
+      "text": "カイゼン活動で段取り時間を半分にした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "カイゼン",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-076",
+      "lang": "ja",
+      "text": "現地現物で確認したところ、ホースが擦れていた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "現地現物",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 16,
+              "text": "ホース",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-077",
+      "lang": "ja",
+      "text": "ジャスト・イン・タイムの徹底で仕掛品が減った。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 11,
+              "text": "ジャスト・イン・タイム",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-078",
+      "lang": "ja",
+      "text": "潤滑不足は焼き付きの原因になり得る。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "潤滑不足",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "焼き付き",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-079",
+      "lang": "ja",
+      "text": "シール材の選定ミスが漏れを引き起こしたとは言えない。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "シール",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-080",
+      "lang": "ja",
+      "text": "ギアの摩耗は振動センサで早期に検知できる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 11,
+              "text": "振動センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-081",
+      "lang": "ja",
+      "text": "冷却水の不足でエンジンがオーバーヒートした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 19,
+              "text": "オーバーヒート",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-082",
+      "lang": "ja",
+      "text": "バッテリーの劣化によりエンジンがかからなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 15,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-083",
+      "lang": "ja",
+      "text": "ステアリングの異音について点検を依頼された。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "点検",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-084",
+      "lang": "ja",
+      "text": "締結部の緩みが原因で部品が脱落した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": []
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-085",
+      "lang": "ja",
+      "text": "油圧ホースを新品に交換した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "油圧ホース",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-086",
+      "lang": "ja",
+      "text": "フィルター交換を怠ったため、ポンプが故障した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "フィルタ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "交換",
+              "labels": [
+                "MaintenanceAction"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-087",
+      "lang": "ja",
+      "text": "異常発生時はアンドンで知らせる決まりになっている。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 10,
+              "text": "アンドン",
+              "labels": [
+                "TPSConcept"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-088",
+      "lang": "ja",
+      "text": "軸受けの温度上昇を監視するため温度センサを追加した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "軸受け",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "温度上昇",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 15,
+              "end": 20,
+              "text": "温度センサ",
+              "labels": [
+                "Sensor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-089",
+      "lang": "ja",
+      "text": "マシニングセンタの主軸がロックした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 8,
+              "text": "マシニングセンタ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "主軸",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-090",
+      "lang": "ja",
+      "text": "切削油の劣化が工具の摩耗を早めた可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-091",
+      "lang": "ja",
+      "text": "射出成形機の金型に亀裂が入っていた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "射出成形機",
+              "labels": [
+                "Machine"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 11,
+              "text": "亀裂",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-092",
+      "lang": "ja",
+      "text": "コンベヤのローラーが固着していた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "コンベヤ",
+              "labels": [
+                "Machine"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-093",
+      "lang": "ja",
+      "text": "電動機の過電流で遮断器が作動した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "電動機",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-094",
+      "lang": "ja",
+      "text": "排気ファンのベルトが切れていた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "ベルト",
+              "labels": [
+                "Component"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-095",
+      "lang": "ja",
+      "text": "圧縮空気の漏れが圧力低下の原因だった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "漏れ",
+              "labels": [
+                "FailureMode"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "圧力低下",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-096",
+      "lang": "ja",
+      "text": "溶接不良は電極の摩耗によるものだった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-097",
+      "lang": "ja",
+      "text": "点検表に従って毎朝ボルトの緩みを確認している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "点検表",
+              "labels": [
+                "Countermeasure"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 15,
+              "text": "ボルトの緩み",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-098",
+      "lang": "ja",
+      "text": "防錆処理により腐食の発生を抑えた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 1,
+              "end": 2,
+              "text": "錆",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "腐食",
+              "labels": [
+                "Cause"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-099",
+      "lang": "ja",
+      "text": "ブレーキの異音はパッドの摩耗が原因ではなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ブレーキ",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "異音",
+              "labels": [
+                "Observation"
+              ]
+            }
+          },
+          {
+            "id": "e2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "摩耗",
+              "labels": [
+                "Cause"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "CAUSED_BY",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "ma-ja-100",
+      "lang": "ja",
+      "text": "エンジンの振動は点火プラグの劣化によるものと考えられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "エンジン",
+              "labels": [
+                "Component"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "振動",
+              "labels": [
+                "Observation"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

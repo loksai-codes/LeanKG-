@@ -104,7 +104,7 @@ sentences per pack per language.
       confidence scores, eval harness. *Done:* first gold sets, setups A and B reported.
 - [~] **M4 (weeks 8–9)** (code complete, offline-tested; live Groq run + setups C/D pending API key) Groq fallback: router, constrained prompts, cache, dedupe, batching,
       budget cap, `review-llm`. *Done:* setups C and D + LLM call rate reported.
-- [ ] **M5 (weeks 10–12)** Manufacturing pack (NHTSA, MaintIE, JA TPS/recall text) with no
+- [x] **M5 (weeks 10–12)** (A/B done; C/D pending Groq key) Manufacturing pack (NHTSA, MaintIE, JA TPS/recall text) with no
       engine code changes. *Done:* JA question demo data in graph.
 - [ ] **M6 (weeks 13–14)** Docs site, two notebooks (one JA), README benchmark, v0.1.0 to PyPI.
 

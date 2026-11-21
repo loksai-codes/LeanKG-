@@ -1,0 +1,4730 @@
+[
+  {
+    "data": {
+      "id": "he-ja-001",
+      "lang": "ja",
+      "text": "長時間労働によるストレスが不眠を引き起こした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-002",
+      "lang": "ja",
+      "text": "慢性ストレスはうつ病のリスクを高める。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "慢性ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 10,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-003",
+      "lang": "ja",
+      "text": "職場ストレスは高血圧と関連している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 10,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-004",
+      "lang": "ja",
+      "text": "定期的な運動はストレスを軽減する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-005",
+      "lang": "ja",
+      "text": "瞑想を続けたところ、不安が和らいだ。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 12,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-006",
+      "lang": "ja",
+      "text": "睡眠不足は集中力低下につながる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 10,
+              "text": "集中力低下",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-007",
+      "lang": "ja",
+      "text": "認知行動療法は不眠症の治療に有効である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "認知行動療法",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 10,
+              "text": "不眠症",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "TREATS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-008",
+      "lang": "ja",
+      "text": "抗うつ薬はうつ病の症状を改善した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "抗うつ薬",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-009",
+      "lang": "ja",
+      "text": "社会的孤立は心血管疾患のリスク要因である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "社会的孤立",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 11,
+              "text": "心血管疾患",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-010",
+      "lang": "ja",
+      "text": "夜勤を続けると睡眠障害が起こりやすい。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "夜勤",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-011",
+      "lang": "ja",
+      "text": "ヨガは血圧を下げる効果がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "ヨガ",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "血圧",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-012",
+      "lang": "ja",
+      "text": "マインドフルネスはコルチゾールを低下させる可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 8,
+              "text": "マインドフルネス",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 15,
+              "text": "コルチゾール",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-013",
+      "lang": "ja",
+      "text": "燃え尽き症候群の主な症状は疲労である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "疲労",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "HAS_SYMPTOM"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-014",
+      "lang": "ja",
+      "text": "うつ病では食欲不振がよく見られる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "食欲不振",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-015",
+      "lang": "ja",
+      "text": "不安は知覚ストレス尺度で評価した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 11,
+              "text": "知覚ストレス尺度",
+              "labels": [
+                "Instrument"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "MEASURED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-016",
+      "lang": "ja",
+      "text": "心拍変動はストレスの指標として用いられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "心拍変動",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-017",
+      "lang": "ja",
+      "text": "経済的困窮が抑うつを悪化させた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "経済的困窮",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "抑うつ",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-018",
+      "lang": "ja",
+      "text": "ソーシャルサポートは職場ストレスを緩和する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 9,
+              "text": "ソーシャルサポート",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 16,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-019",
+      "lang": "ja",
+      "text": "運動は不眠を改善しなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-020",
+      "lang": "ja",
+      "text": "深呼吸は動悸を和らげることがある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "深呼吸",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "動悸",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-021",
+      "lang": "ja",
+      "text": "交代勤務は疲労を増加させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "交代勤務",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "疲労",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-022",
+      "lang": "ja",
+      "text": "孤独感がうつ病の発症に関与している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "孤独感",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 7,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-023",
+      "lang": "ja",
+      "text": "ストレスが頭痛の原因であるとは言えない。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-024",
+      "lang": "ja",
+      "text": "慢性的な睡眠不足は高血圧のリスクを高める可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 12,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-025",
+      "lang": "ja",
+      "text": "瞑想は血圧に影響を与えなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "血圧",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-026",
+      "lang": "ja",
+      "text": "燃え尽き症候群は休職の原因となる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "休職",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-027",
+      "lang": "ja",
+      "text": "うつ病はPHQ-9で評価された。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 9,
+              "text": "PHQ-9",
+              "labels": [
+                "Instrument"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "MEASURED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-028",
+      "lang": "ja",
+      "text": "有酸素運動は抑うつ症状を軽減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "有酸素運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "抑うつ",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-029",
+      "lang": "ja",
+      "text": "イライラは睡眠不足の症状である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "イライラ",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-030",
+      "lang": "ja",
+      "text": "職場ストレスが仕事のパフォーマンスを低下させた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 17,
+              "text": "仕事のパフォーマンス",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-031",
+      "lang": "ja",
+      "text": "心的外傷後ストレス障害では不眠がよく見られる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 11,
+              "text": "心的外傷後ストレス障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 13,
+              "end": 15,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-032",
+      "lang": "ja",
+      "text": "睡眠衛生の指導で不眠が改善した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠衛生",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 10,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-033",
+      "lang": "ja",
+      "text": "社会的支援は燃え尽き症候群を予防する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "社会的支援",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 13,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-034",
+      "lang": "ja",
+      "text": "肩こりはストレスの症状の一つである。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "肩こり",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-035",
+      "lang": "ja",
+      "text": "不安障害は動悸を伴うことが多い。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "不安障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "動悸",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-036",
+      "lang": "ja",
+      "text": "慢性ストレスによりコルチゾール値が上昇した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "慢性ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 16,
+              "text": "コルチゾール値",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-037",
+      "lang": "ja",
+      "text": "抗うつ薬は不安を軽減しなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "抗うつ薬",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-038",
+      "lang": "ja",
+      "text": "ヨガは疲労感を軽減するかもしれない。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "ヨガ",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 6,
+              "text": "疲労感",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-039",
+      "lang": "ja",
+      "text": "夜勤は心血管疾患のリスクと関連している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "夜勤",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 8,
+              "text": "心血管疾患",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-040",
+      "lang": "ja",
+      "text": "運動不足がストレスを悪化させる可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-041",
+      "lang": "ja",
+      "text": "うつ病の患者では集中困難がみられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "集中困難",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-042",
+      "lang": "ja",
+      "text": "瞑想はイライラを減らした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "イライラ",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-043",
+      "lang": "ja",
+      "text": "仕事のストレスは生活の質を低下させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "仕事のストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "生活の質",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-044",
+      "lang": "ja",
+      "text": "睡眠障害は頭痛を引き起こすことがある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-045",
+      "lang": "ja",
+      "text": "認知行動療法は不安障害を治療する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "認知行動療法",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "不安障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "TREATS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-046",
+      "lang": "ja",
+      "text": "高血圧は血圧で評価される。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "血圧",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "MEASURED_BY"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-047",
+      "lang": "ja",
+      "text": "ストレスは心拍変動を低下させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "心拍変動",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-048",
+      "lang": "ja",
+      "text": "休職は燃え尽き症候群の結果として生じた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "休職",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 10,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-049",
+      "lang": "ja",
+      "text": "社会的孤立は不安を高める。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "社会的孤立",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 8,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-050",
+      "lang": "ja",
+      "text": "睡眠不足は食欲不振とは関連がなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "食欲不振",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-051",
+      "lang": "ja",
+      "text": "マインドフルネス瞑想は抑うつを軽減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 10,
+              "text": "マインドフルネス瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 11,
+              "end": 14,
+              "text": "抑うつ",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-052",
+      "lang": "ja",
+      "text": "慢性ストレスは燃え尽き症候群につながる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "慢性ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 14,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-053",
+      "lang": "ja",
+      "text": "長期の夜勤により睡眠障害が発生した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "夜勤",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 12,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-054",
+      "lang": "ja",
+      "text": "経済的負担は不眠と関連している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "経済的負担",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 8,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-055",
+      "lang": "ja",
+      "text": "有酸素運動は高血圧を改善する可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "有酸素運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-056",
+      "lang": "ja",
+      "text": "うつ病は疲労を引き起こす。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "疲労",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-057",
+      "lang": "ja",
+      "text": "深呼吸で不安が軽くなった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "深呼吸",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-058",
+      "lang": "ja",
+      "text": "燃え尽き症候群は職場ストレスに起因する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 14,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "from_id": "e1",
+            "to_id": "e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-059",
+      "lang": "ja",
+      "text": "心理的ストレスはコルチゾールを増加させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "心理的ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 14,
+              "text": "コルチゾール",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-060",
+      "lang": "ja",
+      "text": "抗うつ薬で大うつ病性障害を治療した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "抗うつ薬",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 12,
+              "text": "大うつ病性障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "TREATS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-061",
+      "lang": "ja",
+      "text": "不眠症の主な症状は疲労感である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "不眠症",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 12,
+              "text": "疲労感",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "HAS_SYMPTOM"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-062",
+      "lang": "ja",
+      "text": "睡眠衛生は睡眠障害を予防する。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠衛生",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-063",
+      "lang": "ja",
+      "text": "運動は集中力低下を防ぐ。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 8,
+              "text": "集中力低下",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-064",
+      "lang": "ja",
+      "text": "孤独は高血圧の原因ではなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "孤独",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 6,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-065",
+      "lang": "ja",
+      "text": "瞑想は頭痛を軽減することが示唆された。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 5,
+              "text": "頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-066",
+      "lang": "ja",
+      "text": "職場ストレスは生産性を低下させた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 10,
+              "text": "生産性",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-067",
+      "lang": "ja",
+      "text": "睡眠不足で倦怠感が強まった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "倦怠感",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-068",
+      "lang": "ja",
+      "text": "ヨガは不安障害の治療に用いられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "ヨガ",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "不安障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "TREATS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-069",
+      "lang": "ja",
+      "text": "ソーシャルサポートは抑うつを和らげた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 9,
+              "text": "ソーシャルサポート",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 13,
+              "text": "抑うつ",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-070",
+      "lang": "ja",
+      "text": "交代勤務がうつ病の原因である可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "交代勤務",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-071",
+      "lang": "ja",
+      "text": "慢性ストレスは食欲低下をもたらす。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "慢性ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "食欲低下",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-072",
+      "lang": "ja",
+      "text": "不安は知覚ストレス尺度と相関していた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 11,
+              "text": "知覚ストレス尺度",
+              "labels": [
+                "Instrument"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-073",
+      "lang": "ja",
+      "text": "燃え尽き症候群の職員では頭痛が多かった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 14,
+              "text": "頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-074",
+      "lang": "ja",
+      "text": "ストレスにより動悸が生じた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "動悸",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-075",
+      "lang": "ja",
+      "text": "心的外傷後ストレス障害は抑うつと関連している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 11,
+              "text": "心的外傷後ストレス障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 12,
+              "end": 15,
+              "text": "抑うつ",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-076",
+      "lang": "ja",
+      "text": "睡眠障害は生活の質を低下させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "生活の質",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-077",
+      "lang": "ja",
+      "text": "認知行動療法はイライラを軽減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "認知行動療法",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 11,
+              "text": "イライラ",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-078",
+      "lang": "ja",
+      "text": "有酸素運動は心拍変動を改善した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "有酸素運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 10,
+              "text": "心拍変動",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-079",
+      "lang": "ja",
+      "text": "呼吸法は緊張型頭痛を和らげる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "呼吸法",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 9,
+              "text": "緊張型頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-080",
+      "lang": "ja",
+      "text": "社会的孤立が睡眠障害を引き起こすとは限らない。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "社会的孤立",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 10,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-081",
+      "lang": "ja",
+      "text": "長時間労働は燃え尽き症候群のリスクを高める。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 13,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-082",
+      "lang": "ja",
+      "text": "うつ病では不眠が多くみられる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-083",
+      "lang": "ja",
+      "text": "運動はコルチゾール値を下げなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 10,
+              "text": "コルチゾール値",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-084",
+      "lang": "ja",
+      "text": "抗うつ薬は食欲不振を改善した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "抗うつ薬",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "食欲不振",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-085",
+      "lang": "ja",
+      "text": "職場ストレスは欠勤と関連していた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "欠勤",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-086",
+      "lang": "ja",
+      "text": "瞑想は睡眠障害の治療に役立つ。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "瞑想",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "睡眠障害",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "TREATS"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-087",
+      "lang": "ja",
+      "text": "睡眠不足は不安を悪化させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "睡眠不足",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 7,
+              "text": "不安",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-088",
+      "lang": "ja",
+      "text": "心理的ストレスは心疾患のリスクを高める。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 7,
+              "text": "心理的ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 8,
+              "end": 11,
+              "text": "心疾患",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-089",
+      "lang": "ja",
+      "text": "ヨガは肩こりを軽減した。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "ヨガ",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 6,
+              "text": "肩こり",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-090",
+      "lang": "ja",
+      "text": "経済的困窮はうつ病を引き起こす可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "経済的困窮",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-091",
+      "lang": "ja",
+      "text": "不眠はうつ病の症状である。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 6,
+              "text": "うつ病",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-092",
+      "lang": "ja",
+      "text": "社会的支援は高血圧を予防しなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "社会的支援",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "高血圧",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-093",
+      "lang": "ja",
+      "text": "疲労はPHQ-9では評価されなかった。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "疲労",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 8,
+              "text": "PHQ-9",
+              "labels": [
+                "Instrument"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "MEASURED_BY",
+              "negated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-094",
+      "lang": "ja",
+      "text": "夜勤者では心拍変動が低下していた。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "夜勤",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "心拍変動",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-095",
+      "lang": "ja",
+      "text": "深呼吸は血圧を一時的に下げる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "深呼吸",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "血圧",
+              "labels": [
+                "Biomarker"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "REDUCES"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-096",
+      "lang": "ja",
+      "text": "孤独感は不眠と関連している。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 3,
+              "text": "孤独感",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 6,
+              "text": "不眠",
+              "labels": [
+                "Condition"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "ASSOCIATED_WITH"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-097",
+      "lang": "ja",
+      "text": "慢性ストレスは免疫機能を低下させる。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "慢性ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-098",
+      "lang": "ja",
+      "text": "認知行動療法は燃え尽き症候群を改善する可能性がある。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "認知行動療法",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 14,
+              "text": "燃え尽き症候群",
+              "labels": [
+                "Condition"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-099",
+      "lang": "ja",
+      "text": "運動習慣は生活の質を高める。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "運動",
+              "labels": [
+                "Intervention"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 9,
+              "text": "生活の質",
+              "labels": [
+                "Outcome"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "id": "he-ja-100",
+      "lang": "ja",
+      "text": "職場ストレスが頭痛を引き起こした。"
+    },
+    "predictions": [
+      {
+        "model_version": "leankg",
+        "result": [
+          {
+            "id": "e0",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 6,
+              "text": "職場ストレス",
+              "labels": [
+                "Stressor"
+              ]
+            }
+          },
+          {
+            "id": "e1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "頭痛",
+              "labels": [
+                "Symptom"
+              ]
+            }
+          },
+          {
+            "from_id": "e0",
+            "to_id": "e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "INCREASES_RISK_OF"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+<View>
+  <Header value="leankg / manufacturing / ja"/>
+  <Relations choice="multiple">
+    <Relation value="PART_OF"/>
+    <Relation value="HAS_FAILURE_MODE"/>
+    <Relation value="CAUSED_BY"/>
+    <Relation value="DETECTED_BY"/>
+    <Relation value="FIXED_BY"/>
+    <Relation value="OCCURS_AT"/>
+    <Relation value="PREVENTS"/>
+    <Relation value="negated"/>
+  </Relations>
+  <Labels name="label" toName="text">
+    <Label value="Machine" hint="機械" background="#e6194b"/>
+    <Label value="Component" hint="部品" background="#3cb44b"/>
+    <Label value="FailureMode" hint="故障モード" background="#4363d8"/>
+    <Label value="Cause" hint="原因" background="#f58231"/>
+    <Label value="Observation" hint="現象" background="#911eb4"/>
+    <Label value="MaintenanceAction" hint="保全作業" background="#46a5a5"/>
+    <Label value="Station" hint="工程" background="#f032e6"/>
+    <Label value="Sensor" hint="センサ" background="#9a6324"/>
+    <Label value="Countermeasure" hint="対策" background="#808000"/>
+    <Label value="TPSConcept" hint="TPS概念" background="#000075"/>
+  </Labels>
+  <Text name="text" value="$text" granularity="symbol"/>
+</View>
