@@ -1,7 +1,8 @@
 # leankg v0.1: rules first, a little Groq — DRAFT
 
-> Draft. The LLM numbers (setups C and D) are placeholders until the Groq runs are done;
-> every number below says where it comes from.
+> Draft. Numbers come from `leankg eval` on small hand-written fixtures (18 sentences per
+> language per pack) with Groq `openai/gpt-oss-20b`; treat them as a smoke test, not a
+> leaderboard.
 
 Most "documents to knowledge graph" demos send every sentence to a large model. That
 works, but you pay for every sentence, you wait for every sentence, and you get a
@@ -40,10 +41,24 @@ rules-only entity F1 is 0.29 (precision 0.78, recall 0.18) under an approximate 
 of MaintIE's scheme, and the stress pack finds none of NCBI Disease's genetic diseases —
 which is exactly what a dictionary should do, and why setup B adds GLiNER.
 
-| Setup | Relation F1 | LLM call rate | Cost / 1,000 docs |
+With Groq (gpt-oss-20b) on the same fixtures:
+
+| Pack / lang | Rules only (A) | Rules + LLM fallback (C) | LLM only (D) |
 |---|---|---|---|
-| C — rules + Groq fallback (gpt-oss-20b) | TBD | TBD | TBD |
-| D — Groq on every sentence | TBD | TBD | TBD |
+| manufacturing / en | 0.72 · 0% · $0 | 0.81 · 16.7% · $0.013 | 0.89 · 94.4% · $0.052 |
+| manufacturing / ja | 0.78 · 0% · $0 | 0.81 · 11.1% · $0.012 | 0.88 · 94.4% · $0.066 |
+| health_stress / en | 1.00 · 0% · $0 | 0.94 · 5.6% · $0.008 | 0.88 · 94.4% · $0.037 |
+| health_stress / ja | 0.93 · 0% · $0 | 0.88 · 11.1% · $0.010 | 0.84 · 88.9% · $0.037 |
+
+(relation F1 · share of sentences sent to the LLM · cost per 1,000 docs)
+
+Two honest readings. In manufacturing the fallback buys part of what an LLM-only run gets
+for about a sixth of the calls; the rest is lost because sentences with one confident rule
+hit are never sent, which is a design choice worth revisiting. In the health pack the rules
+were already right and the LLM mostly added relations the gold labels don't accept (it
+reads "headache and fatigue were common in the burnout group" as HAS_SYMPTOM). Rules-first
+isn't automatically more accurate; it is cheaper, repeatable — the second run cost $0 from
+the cache — and it tells you exactly where the LLM was used.
 
 ## Try it
 `pip install "leankg[ja]"`, then

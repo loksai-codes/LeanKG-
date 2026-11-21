@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-ALL MILESTONES BUILT (M0–M6). Waiting for the user's Groq key to finish M4/M5 live parts (setups C/D).
+ALL MILESTONES DONE (M0–M6), including the live Groq run (2026-11-21).
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -132,22 +132,21 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   then `uv pip install --python ~/.venvs/leankg/bin/python gliner sentence-transformers "numpy<2"`.
   Dependency facts already verified by `uv lock`: [med] and [ja] co-resolve on spaCy 3.8.18.
 
-## Next (once the Groq key is in .env)
-1. `uv run pytest -m integration -v` (Neo4j + live Groq tests).
-2. `uv run leankg eval --domain health_stress --setup C --llm groq --fixtures`
-   and `--domain manufacturing`; then `--setup D --llm groq --llm-budget 50`.
-3. Build twice to confirm cache hits:
-   `uv run leankg build examples/manufacturing --domain manufacturing --setup C --llm groq --csv-text-column summary --out none` (×2; second run: llm requests 0, cache% 100).
-4. Fill the README/benchmarks/blog C and D rows; commit.
+## Live Groq run (2026-11-21) — done
+- `leankg llm-models`: gpt-oss-20b served; Llama 3.x no longer listed.
+- Integration: 7/7 pass (3 Groq + 4 Neo4j).
+- Setups C/D on seed fixtures (relation F1 · LLM call rate · cost/1k docs):
+  mf EN A 0.72 → C 0.81 (16.7%, $0.013) → D 0.89 (94.4%, $0.052);
+  mf JA A 0.78 → C 0.81 (11.1%, $0.012) → D 0.88 (94.4%, $0.066);
+  hs EN A 1.00 → C 0.94 (5.6%, $0.008) → D 0.88 (94.4%, $0.037);
+  hs JA A 0.93 → C 0.88 (11.1%, $0.010) → D 0.84 (88.9%, $0.037).
+  No run hit the budget. Health "losses" = LLM adds HAS_SYMPTOM for "symptoms common in
+  burnout group" sentences that the gold marks as no relation (gold kept as written).
+- Cache: second identical build → 0 requests, cache 100%, $0.
 
-## Groq docs check (2026-11-21, for M4)
-- docs/GROQ.md is still accurate: gpt-oss-20b ($0.075/$0.30) and gpt-oss-120b ($0.15/$0.60)
-  are production, strict json_schema supported, streaming/tools not combinable with it.
-- `reasoning_effort` = low|medium|high for gpt-oss; `include_reasoning=false` hides reasoning
-  text (reasoning tokens are still billed as output).
-- Free tier for gpt-oss-20b (likely): 30 RPM, 1K RPD, **8K TPM**, 200K TPD → batches must stay
-  small enough for 8K TPM; client honours `retry-after` and `x-ratelimit-reset-tokens`.
-- Llama 3.x shutdown 2026-08-16 (past) even though the models page still lists them.
+## Next
+- Label the Japanese gold sets, then re-run A–D on them (`leankg eval --setup X --lang ja`).
+- Optionally install GLiNER/embeddings (commands above) and re-run setup B.
 
 ## Decisions log
 - D1: `[med]` and `[ja]` stay separate extras although they currently co-resolve.
@@ -158,7 +157,6 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
 - Smart App Control blocks spaCy on native Windows Python (see above). Linux/macOS/CI fine.
 
 ## Needs you
-- **Groq API key** → `.env` (`GROQ_API_KEY=...`), then the steps under "Next".
 - **Japanese gold labels**: label `domains/<pack>/eval/labelstudio/tasks.ja.json` (100 per
   pack, config.xml alongside) and convert to `domains/<pack>/eval/gold.ja.jsonl` (docs/EVAL.md).
 - **GitHub repo**: create `leankg`, push, replace `OWNER` in pyproject.toml and mkdocs.yml.

@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Live Groq run (completes M4/M5)
+- Integration tests pass against live Groq (`openai/gpt-oss-20b`) and Neo4j (7/7).
+- Setups C and D measured for both packs and languages; README table, benchmarks page
+  and blog draft filled in. Second identical build: 0 LLM requests, 100% cache hits.
+- `.env.example`: `NEO4J_PASSWORD` default matches docker-compose; the default-provider
+  override is commented out so builds stay offline unless `--llm groq` is given.
+
 ## [0.1.0] — 2026-11-21 (prepared; not yet published)
 
 ### M6 — polish and publish
