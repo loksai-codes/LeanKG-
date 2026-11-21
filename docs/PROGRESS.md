@@ -144,6 +144,17 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   burnout group" sentences that the gold marks as no relation (gold kept as written).
 - Cache: second identical build → 0 requests, cache 100%, $0.
 
+## GLiNER / embeddings (2026-11-21)
+- The earlier "stopped" install had actually completed: torch 2.15.0+cpu, gliner 0.2.30,
+  sentence-transformers 6.3.0, transformers 5.22.2 are in the WSL venv (not in uv.lock).
+- Embedding linking + chunk embeddings run; setup B on the seed fixtures is unchanged
+  (B = A on all four sets).
+- GLiNER fails to load: transformers 5.x parses mDeBERTa's `spm.model` as tiktoken
+  ("Error parsing line b'' … spm.model"). Likely fix: `uv pip install "transformers<5"`
+  (check sentence-transformers still works) or a newer gliner release. Not done.
+- Unit tests now never load real GLiNER/embedding models (autouse fixture in tests/conftest.py);
+  before that fix, the suite took ~10 min downloading models.
+
 ## Next
 - Label the Japanese gold sets, then re-run A–D on them (`leankg eval --setup X --lang ja`).
 - Optionally install GLiNER/embeddings (commands above) and re-run setup B.

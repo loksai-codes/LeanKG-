@@ -162,8 +162,9 @@ C 200–350, D 21–170 (bounded by Groq free-tier rate limits).
 > per pack** (`domains/<pack>/eval/fixtures/`), written by the same people who wrote the
 > dictionaries, so entity scores are optimistic and one relation moves F1 by several
 > points. Independently labelled Japanese gold sets (~100 sentences per pack) are in
-> progress. Setup B here = rules + spaCy/GiNZA NER; GLiNER and embeddings weren't
-> installed in the benchmark environment.
+> progress. Setup B here = rules + spaCy/GiNZA NER + multilingual embedding linking
+> (no change on these sets); GLiNER is installed but currently fails to load with
+> `transformers` 5.x (it misreads mDeBERTa's SentencePiece tokenizer), so it didn't run.
 
 **What the numbers say:**
 
@@ -289,7 +290,7 @@ Python 3.11 and 3.12, plus an evaluation regression job that fails if F1 drops b
 ## Roadmap
 
 - Independently labelled Japanese gold sets and re-benchmarking on them
-- GLiNER/embedding numbers for setup B
+- GLiNER numbers for setup B (pin a compatible `transformers` / `gliner` pair)
 - Optional routing of leftover candidate pairs (recall vs. LLM calls)
 - A Sudachi user dictionary built from pack terms
 - Clause-aware trigger scoping
