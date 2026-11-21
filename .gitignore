@@ -1,0 +1,40 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# leankg runtime
+.leankg/
+out/
+reports/
+site/
+
+# datasets are never committed (download scripts only)
+data/
+domains/*/data/
+*.jsonl.gz
+*.zip
+*.tar.gz
+
+# notebooks
+.ipynb_checkpoints/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.claude/settings.local.json

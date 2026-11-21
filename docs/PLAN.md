@@ -94,7 +94,7 @@ Gold: BC5CDR / NCBI Disease (EN health), MaintIE (EN maintenance), ~100 hand-lab
 sentences per pack per language.
 
 ## Milestones (~14 weeks at 10–12 h/week; JA adds ~2 weeks)
-- [ ] **M0 (week 1)** Repo scaffold, tooling, CI, docker-compose Neo4j, core models.
+- [x] **M0 (week 1)** Repo scaffold, tooling, CI, docker-compose Neo4j, core models.
 - [ ] **M1 (weeks 2–3)** Ingest, language detection, preprocessing (EN + JA), dictionary
       + regex entities, Neo4j writer + exporters. *Done:* 50 MedlinePlus pages + 20 JA
       pages in Neo4j as Document/Chunk/Entity.
@@ -111,6 +111,7 @@ sentences per pack per language.
 ## Public API target
 ```python
 from leankg import Pipeline
+
 pipe = Pipeline.from_domain("manufacturing", llm="groq", llm_budget=500)
 report = pipe.build("./data/nhtsa", neo4j_uri="bolt://localhost:7687")
 print(report.llm_call_rate, report.by_lang["ja"].f1)

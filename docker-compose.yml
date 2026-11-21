@@ -1,0 +1,24 @@
+# Neo4j 5 with APOC for leankg. Start: docker compose up -d
+# Password comes from .env (NEO4J_PASSWORD); default only for local throwaway use.
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: leankg-neo4j
+    ports:
+      - "7474:7474"   # browser
+      - "7687:7687"   # bolt
+    environment:
+      NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:-leankg-dev-pw}"
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_server_memory_heap_max__size: "1G"
+    volumes:
+      - leankg_neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  leankg_neo4j_data:

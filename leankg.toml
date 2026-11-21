@@ -1,0 +1,52 @@
+# leankg configuration. Every key can be overridden by env: LEANKG_<SECTION>_<KEY>
+# (e.g. LEANKG_LLM_MODEL, LEANKG_LLM_BUDGET_CALLS). Secrets (GROQ_API_KEY,
+# NEO4J_PASSWORD) are read from the environment / .env only — never put them here.
+
+[llm]
+provider = "none"                 # none | groq | ollama | fake
+# Groq model IDs and prices change often (see docs/GROQ.md). Checked 2026-11.
+model = "openai/gpt-oss-20b"
+escalation_model = ""             # e.g. "openai/gpt-oss-120b"; empty = off
+escalation_floor = 0.5            # re-ask the escalation model below this confidence
+price_in_per_mtok = 0.075
+price_out_per_mtok = 0.30
+budget_calls = 500
+budget_tokens = 400000
+batch_size = 20                   # hard cases per request
+temperature = 0
+max_concurrency = 2
+reasoning_effort = "low"
+max_completion_tokens = 4096
+cache_path = ".leankg/cache.sqlite"
+dedupe_threshold = 95
+
+[chunking]
+target_chars = { en = 800, ja = 400, default = 800 }
+
+[detect]
+cjk_threshold = 0.2
+
+[scoring]
+accept_threshold = 0.6
+hedge_penalty = 0.7
+complex_penalty = 0.5
+flip_penalty = 0.8
+method_prior = { dict = 0.95, regex = 0.9, ner = 0.75, gliner = 0.7, dep = 0.9, trigger = 0.72, cooc = 0.35, llm = 0.85 }
+
+[linking]
+fuzzy_threshold = 88
+fuzzy_margin = 2.0
+use_embeddings = true
+embed_threshold = 0.85
+embed_margin = 0.02
+
+[gliner]
+threshold = 0.5
+min_entities_before = 2
+batch_size = 8
+
+[neo4j]
+uri = "bolt://localhost:7687"
+user = "neo4j"
+database = "neo4j"
+batch_size = 1000
