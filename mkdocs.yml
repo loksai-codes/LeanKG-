@@ -35,5 +35,3 @@ nav:
       - Groq design: GROQ.md
   - Blog:
       - leankg v0.1: blog/leankg-v0.1.md
-not_in_nav: |
-  PROGRESS.md

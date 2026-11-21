@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="960" height="250" role="img" aria-labelledby="t d">
+  <title id="t">Graph なぜなぜ分析 (5 Whys)</title>
+  <desc id="d">Illustration of the demo query that walks CAUSED_BY edges back from a failure: abnormal noise is caused by bearing seizure, which is caused by insufficient lubrication.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f472b6"/>
+    </marker>
+    <style>
+      .sans { font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif; }
+      .node { opacity: 0; animation: appear 9s infinite; transform-box: fill-box; transform-origin: center; }
+      .n1 { animation-delay: 0s; } .n2 { animation-delay: 1.6s; } .n3 { animation-delay: 3.2s; } .n4 { animation-delay: 4.8s; }
+      @keyframes appear { 0% { opacity: 0; transform: scale(.7); } 4% { opacity: 1; transform: scale(1.06); } 7% { transform: scale(1); } 88% { opacity: 1; } 96%,100% { opacity: 0; } }
+      .edge { fill: none; stroke: #f472b6; stroke-width: 3; stroke-dasharray: 170; stroke-dashoffset: 170; animation: draw 9s infinite; }
+      .e1 { animation-delay: .8s; } .e2 { animation-delay: 2.4s; } .e3 { animation-delay: 4.0s; }
+      @keyframes draw { 0% { stroke-dashoffset: 170; } 8%,88% { stroke-dashoffset: 0; } 96%,100% { stroke-dashoffset: 170; } }
+      .why { opacity: 0; animation: appear 9s infinite; }
+      .w1 { animation-delay: .9s; } .w2 { animation-delay: 2.5s; } .w3 { animation-delay: 4.1s; }
+      .ja { font-size: 22px; font-weight: 700; fill: #f8fafc; }
+      .en { font-size: 12.5px; fill: #cbd5e1; }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .node, .why { opacity: 1; } .edge { stroke-dashoffset: 0; } }
+    </style>
+  </defs>
+
+  <rect width="960" height="250" rx="18" fill="#0f172a"/>
+  <g class="sans">
+    <text x="32" y="42" font-size="18" font-weight="700" fill="#f1f5f9">Graph なぜなぜ分析 — walk CAUSED_BY back to the root cause</text>
+    <text x="32" y="64" font-size="12.5" fill="#94a3b8">MATCH (f:FailureMode)-[:CAUSED_BY*1..5]-&gt;(root) · illustration of domains/manufacturing/demo_queries.cypher</text>
+
+    <path class="edge e1" d="M 236 150 L 330 150" marker-end="url(#arr)"/>
+    <path class="edge e2" d="M 476 150 L 570 150" marker-end="url(#arr)"/>
+    <path class="edge e3" d="M 716 150 L 800 150" marker-end="url(#arr)"/>
+
+    <g class="why w1"><text x="283" y="132" text-anchor="middle" font-size="14" fill="#f9a8d4">なぜ？</text></g>
+    <g class="why w2"><text x="523" y="132" text-anchor="middle" font-size="14" fill="#f9a8d4">なぜ？</text></g>
+    <g class="why w3"><text x="758" y="132" text-anchor="middle" font-size="14" fill="#f9a8d4">なぜ？</text></g>
+
+    <g class="node n1">
+      <rect x="40" y="112" width="196" height="76" rx="14" fill="#7f1d1d" stroke="#f87171" stroke-width="2"/>
+      <text x="138" y="148" text-anchor="middle" class="ja">異音</text>
+      <text x="138" y="170" text-anchor="middle" class="en">abnormal noise · Observation</text>
+    </g>
+    <g class="node n2">
+      <rect x="330" y="112" width="146" height="76" rx="14" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+      <text x="403" y="148" text-anchor="middle" class="ja">焼き付き</text>
+      <text x="403" y="170" text-anchor="middle" class="en">seizure · Failure mode</text>
+    </g>
+    <g class="node n3">
+      <rect x="570" y="112" width="146" height="76" rx="14" fill="#713f12" stroke="#facc15" stroke-width="2"/>
+      <text x="643" y="148" text-anchor="middle" class="ja">潤滑不足</text>
+      <text x="643" y="170" text-anchor="middle" class="en">poor lubrication · Cause</text>
+    </g>
+    <g class="node n4">
+      <rect x="800" y="112" width="128" height="76" rx="14" fill="#14532d" stroke="#4ade80" stroke-width="2"/>
+      <text x="864" y="146" text-anchor="middle" font-size="16" font-weight="700" fill="#bbf7d0">真因</text>
+      <text x="864" y="168" text-anchor="middle" class="en">root cause ✓</text>
+    </g>
+
+    <text x="32" y="226" font-size="12.5" fill="#94a3b8">Edges keep provenance (sentence, method, confidence) and evidence counts; ruled-out causes (〜ではなかった) are stored as negated edges.</text>
+  </g>
+</svg>

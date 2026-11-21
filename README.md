@@ -1,24 +1,24 @@
-# leankg
+<p align="center">
+  <img src="docs/assets/hero.svg" alt="LeanKG — documents to a knowledge graph, rules first, English and Japanese" width="100%">
+</p>
 
-**Turn English and Japanese documents into a Neo4j knowledge graph. Classic NLP does most
-of the work; an LLM is asked only about the sentences the rules can't settle.**
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.11%20%7C%203.12-blue" alt="Python 3.11 | 3.12">
+  <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache-2.0">
+  <img src="https://img.shields.io/badge/languages-English%20%7C%20日本語-orange" alt="English | 日本語">
+  <img src="https://img.shields.io/badge/graph-Neo4j%205-018bff" alt="Neo4j 5">
+  <img src="https://img.shields.io/badge/LLM-Groq%20(optional)-f55036" alt="Groq optional">
+  <img src="https://img.shields.io/badge/status-alpha%20v0.1.0-lightgrey" alt="alpha">
+</p>
 
-![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)
-![License](https://img.shields.io/badge/license-Apache--2.0-green)
-![Languages](https://img.shields.io/badge/languages-English%20%7C%20日本語-orange)
-![Status](https://img.shields.io/badge/status-alpha%20(v0.1.0)-lightgrey)
+<p align="center">
+  <b>Turn English and Japanese documents into a Neo4j knowledge graph.</b><br>
+  Classic NLP does most of the work; an LLM is asked only about the sentences the rules can't settle.
+</p>
 
-```text
-leankg run — domain=manufacturing llm=groq (openai/gpt-oss-20b)
-lang  docs  sents  mentions  entities  triples  neg  hard%  llm%  cache%  tok_in  tok_out   cost$
-  en     7     30        36        30       18    0   13.3  13.3     0.0    1260      900  0.0004
-  ja     2     22        29        26       10    0    0.0   0.0     0.0       0        0  0.0000
- all     9     52        65        33       18    0    7.7   7.7     0.0    1260      900  0.0004
-duration 5.88s · 91.9 docs/min · llm requests 1 · cost/1k docs $0.0405
-```
-
-Run the same build again and it costs **$0**: every LLM answer comes from the cache
-(`llm requests 0 · cache% 100`).
+<p align="center">
+  <img src="docs/assets/terminal.svg" alt="leankg build prints a per-language report; the second run is served from cache: 0 LLM requests, $0" width="100%">
+</p>
 
 ---
 
@@ -48,6 +48,13 @@ every run. leankg works the other way round:
 
 ## How it works
 
+<p align="center">
+  <img src="docs/assets/pipeline.svg" alt="Sentences flow through ingest, entities, linking, relations, negation and validation; confident results go to the graph, only hard cases go to the LLM" width="100%">
+</p>
+
+<details>
+<summary>Stage diagram (Mermaid)</summary>
+
 ```mermaid
 flowchart LR
   A["Ingest<br/>PDF · HTML · CSV · TXT<br/>language per chunk"] --> B["Preprocess<br/>spaCy (EN) · GiNZA (JA)"]
@@ -61,6 +68,8 @@ flowchart LR
   H -- "hard case" --> L["LLM fallback<br/>cache · dedupe · batch · budget"]
   L --> W
 ```
+
+</details>
 
 Every stage is a class with `process(doc) -> doc`. You can test any stage on its own or
 skip it by config. A sentence goes to the LLM only if it has entities the schema allows to
@@ -124,6 +133,10 @@ WHERE all(r IN relationships(path) WHERE r.negated = false AND r.status = 'accep
 RETURN [n IN nodes(path) | coalesce(n.name_ja, n.name)] AS why_chain;
 ```
 
+<p align="center">
+  <img src="docs/assets/naze-naze.svg" alt="Graph なぜなぜ分析: abnormal noise is caused by seizure, which is caused by poor lubrication" width="100%">
+</p>
+
 The demo file also covers failure/fix tables with provenance, a "seen this defect
 before?" vector search, explicitly ruled-out causes, and which TPS concepts prevent which
 failures.
@@ -144,6 +157,10 @@ hard cases are kept as unverified candidates; the build doesn't fail. `--llm oll
 the same way with a local model.
 
 ## Benchmark
+
+<p align="center">
+  <img src="docs/assets/benchmark.svg" alt="Manufacturing EN: rules only 0% LLM calls F1 0.72; rules + LLM fallback 16.7% F1 0.81 $0.013 per 1k docs; LLM only 94.4% F1 0.89 $0.052 per 1k docs" width="100%">
+</p>
 
 Status 2026-11-21. LLM = Groq `openai/gpt-oss-20b`. Relation F1, share of sentences sent to
 the LLM, and cost per 1,000 documents:

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" role="img" aria-labelledby="t d">
+  <title id="t">LLM calls and cost: rules-first vs LLM-only</title>
+  <desc id="d">Manufacturing pack, English, Groq gpt-oss-20b on 18 seed sentences. Rules only: 0% of sentences to the LLM, relation F1 0.72. Rules plus LLM fallback: 16.7%, F1 0.81, $0.013 per 1k docs. LLM only: 94.4%, F1 0.89, $0.052 per 1k docs.</desc>
+  <defs>
+    <style>
+      .sans { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .h { font-size: 18px; font-weight: 700; fill: #f1f5f9; }
+      .s { font-size: 12.5px; fill: #94a3b8; }
+      .lab { font-size: 15px; font-weight: 600; fill: #e2e8f0; }
+      .val { font-size: 14px; font-weight: 700; }
+      .bar { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation: grow 7s ease-out infinite; }
+      .d2 { animation-delay: .5s; } .d3 { animation-delay: 1.0s; }
+      @keyframes grow { 0% { transform: scaleX(0); } 22%,88% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+      .num { opacity: 0; animation: fade 7s infinite; }
+      @keyframes fade { 0%,18% { opacity: 0; } 26%,88% { opacity: 1; } 100% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .bar { transform: none; } .num { opacity: 1; } }
+    </style>
+    <linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#4ade80"/></linearGradient>
+    <linearGradient id="gC" x1="0" x2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient>
+    <linearGradient id="gD" x1="0" x2="1"><stop offset="0" stop-color="#f43f5e"/><stop offset="1" stop-color="#fb7185"/></linearGradient>
+  </defs>
+
+  <rect width="960" height="330" rx="18" fill="#0f172a"/>
+  <g class="sans">
+    <text x="32" y="44" class="h">How much goes to the LLM — and what it costs</text>
+    <text x="32" y="66" class="s">manufacturing · English · Groq openai/gpt-oss-20b · 18 hand-written seed sentences (smoke test, not a leaderboard)</text>
+
+    <text x="32" y="106" class="s">share of sentences sent to the LLM →</text>
+    <line x1="250" y1="116" x2="250" y2="296" stroke="#334155"/>
+    <line x1="880" y1="116" x2="880" y2="296" stroke="#1e293b" stroke-dasharray="4 4"/>
+    <text x="880" y="110" text-anchor="end" class="s">100%</text>
+
+    <!-- A -->
+    <text x="32" y="150" class="lab">A · rules only</text>
+    <text x="32" y="168" class="s">relation F1 0.72</text>
+    <rect x="250" y="134" width="4" height="30" rx="2" fill="url(#gA)" class="bar"/>
+    <text x="266" y="155" class="val num" fill="#4ade80">0% · $0</text>
+
+    <!-- C -->
+    <text x="32" y="210" class="lab">C · rules + LLM fallback</text>
+    <text x="32" y="228" class="s">relation F1 0.81</text>
+    <rect x="250" y="194" width="105" height="30" rx="6" fill="url(#gC)" class="bar d2"/>
+    <text x="367" y="215" class="val num" fill="#7dd3fc">16.7% · $0.013 / 1k docs</text>
+
+    <!-- D -->
+    <text x="32" y="270" class="lab">D · LLM only</text>
+    <text x="32" y="288" class="s">relation F1 0.89</text>
+    <rect x="250" y="254" width="595" height="30" rx="6" fill="url(#gD)" class="bar d3"/>
+    <text x="836" y="275" text-anchor="end" class="val num" fill="#1f0a10">94.4% · $0.052 / 1k docs</text>
+  </g>
+</svg>
