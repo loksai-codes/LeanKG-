@@ -6,6 +6,30 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### M4 — Groq LLM fallback (code complete; live run pending an API key)
+- Router stage implementing the PLAN.md hard-case rules with a `reason` enum
+  (`no_rule_relation`, `ambiguous_link`, `low_confidence`, `complex_negation`,
+  `route_all` for setup D); candidates stay `unverified` when no LLM answers.
+- Language-neutral, versioned prompt (`PROMPT_VERSION`) with numbered entities, allowed
+  relations per ordered pair, optional link question and pack few-shot hints
+  (`llm_hints.md` + `llm_hints.<lang>.md`); EN and JA snapshot tests.
+- Strict-mode JSON schema generated from Pydantic and post-processed (all fields
+  required, nullable unions, `additionalProperties: false`, `$defs` inlined) with a test
+  that walks it; local validation of every verdict (indices, allowed types).
+- `GroqClient` (official SDK, Structured Outputs `strict: true`, model availability
+  check, 429 handling via `retry-after` / `x-ratelimit-reset-*` + backoff + jitter,
+  `reasoning_effort` / `include_reasoning` from config, optional escalation model),
+  `OllamaClient` (JSON-schema format mode), `FakeClient` (fixtures) and `NoneClient`.
+- Resolver: SQLite verdict cache, in-run near-duplicate dedupe (RapidFuzz), batching by
+  language, `max_concurrency`, budget cap on calls/tokens that degrades to unverified
+  candidates, JSONL answer log.
+- RunReport: LLM call rate, hard-case rate, cache hit rate, tokens in/out, estimated
+  cost — overall and per language.
+- `leankg review-llm [--apply]` (trigger + synonym suggestions written to
+  `relations.<lang>.learned.yaml` / `dictionaries/learned_<lang>.csv`), `leankg
+  llm-models`, `leankg eval --llm-budget`.
+- Live Groq integration tests (skip without `GROQ_API_KEY`).
+
 ### M3 — statistical NER, GLiNER, linking, evaluation harness
 - NER stage: spaCy/GiNZA NER plus optional extra spaCy pipelines (e.g. scispaCy), labels
   mapped to ontology types via `models.yaml`; missing models become RunReport warnings.

@@ -38,7 +38,8 @@ class LLMConfig(_Section):
     temperature: float = 0.0
     max_concurrency: int = 2
     max_retries: int = 6
-    reasoning_effort: str = "low"
+    reasoning_effort: str = "low"  # "" = don't send
+    include_reasoning: bool | None = False  # None = don't send
     max_completion_tokens: int = 4096
     cache_path: str = ".leankg/cache.sqlite"
     use_cache: bool = True

@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-M4 — Groq LLM fallback (code written, being finished)
+M5 — manufacturing pack (starting); M4 live run pending Groq key
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -99,8 +99,20 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
     spaCy/GiNZA NER only. Retry: add torch CPU index (see git history of pyproject in
     M3 notes) and `uv sync --all-extras`.
 
+- **M4** code complete and tested offline with fake SDK objects / FakeClient (265 unit
+  tests; Groq integration tests skip without a key). Hard-case rate with LLM off on the
+  seed fixtures: health EN 5.6%, health JA 11.1%, manufacturing EN 16.7%, JA 11.1%.
+  - Design question for the user: PLAN.md says never route a sentence that has a
+    high-confidence rule hit. In manufacturing, sentences like 「潤滑不足がベアリングの
+    焼き付きを引き起こした」 get CAUSED_BY by rule, and the second pair
+    (ベアリング HAS_FAILURE_MODE 焼き付き) stays an unverified candidate forever. Routing
+    leftover candidate pairs too would raise relation recall but also the call rate.
+    Kept the PLAN.md rule for now.
+  - Still to do with a key: live integration tests, eval setups C and D, README table,
+    second-build cache check.
+
 ## Next
-- M4 (see prompts/04_groq_fallback.md).
+- M5 (see prompts/05_manufacturing_pack.md).
 
 ## Groq docs check (2026-11-21, for M4)
 - docs/GROQ.md is still accurate: gpt-oss-20b ($0.075/$0.30) and gpt-oss-120b ($0.15/$0.60)

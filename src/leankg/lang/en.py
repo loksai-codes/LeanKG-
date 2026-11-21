@@ -119,3 +119,15 @@ class EnglishProfile:
         from leankg.lang import en_rules
 
         return en_rules.negation_hedge(text, head, tail, sdoc, extra_neg, extra_hedge)
+
+    def trigger_phrase(
+        self, text: str, first: tuple[int, int], second: tuple[int, int]
+    ) -> tuple[str, str] | None:
+        """A candidate trigger for a relation between two spans: the 1–4 words between
+        them (SVO). Returns ``(phrase, position)`` or ``None``."""
+        between = text[first[1] : second[0]].lower()
+        words = re.findall(r"[a-z]+(?:-[a-z]+)*", between)
+        stop = {"the", "a", "an", "of", "and", "or", "in", "on", "with", "to", "this", "that"}
+        if not 1 <= len(words) <= 4 or all(w in stop for w in words):
+            return None
+        return " ".join(words), "between"

@@ -204,3 +204,22 @@ class JapaneseProfile:
         from leankg.lang import ja_rules
 
         return ja_rules.negation_hedge(text, head, tail, sdoc, extra_neg, extra_hedge)
+
+    def trigger_phrase(
+        self, text: str, first: tuple[int, int], second: tuple[int, int]
+    ) -> tuple[str, str] | None:
+        """A candidate trigger: the predicate after the second span (SOV), without the
+        leading particle and trailing auxiliaries, e.g. 「を軽減した」 → 「軽減」."""
+        rest = text[second[1] :]
+        rest = re.split(r"[。！？!?、]", rest, maxsplit=1)[0]
+        rest = re.sub(r"^(?:を|が|は|に|で|の|と|へ|も)+", "", rest)
+        rest = re.sub(
+            r"(?:させる|させた|している|していた|しない|しなかった|された|される|"
+            r"した|する|します|しました|である|です|だ|ない|なかった)$",
+            "",
+            rest,
+        )
+        rest = rest.strip()
+        if not 1 <= len(rest) <= 8:
+            return None
+        return rest, "after"

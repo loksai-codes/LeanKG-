@@ -97,6 +97,9 @@ def eval_cmd(
     types: Annotated[
         list[str] | None, typer.Option(help="Only evaluate these entity types (repeatable).")
     ] = None,
+    llm_budget: Annotated[
+        int | None, typer.Option(help="Hard cap on LLM requests (always set one for setup D).")
+    ] = None,
 ) -> None:
     """Evaluate a setup against gold data; prints a markdown table and writes a JSON report."""
     from leankg.eval.harness import check_baseline, run_eval, save_report
@@ -104,7 +107,15 @@ def eval_cmd(
 
     langs = ["en", "ja"] if lang == "all" else [lang]
     report = run_eval(
-        domain, setup, langs, gold=gold, fixtures=fixtures, llm=llm, skip=skip or (), types=types
+        domain,
+        setup,
+        langs,
+        gold=gold,
+        fixtures=fixtures,
+        llm=llm,
+        skip=skip or (),
+        types=types,
+        overrides={"llm.budget_calls": llm_budget} if llm_budget is not None else None,
     )
     if not report.results:
         typer.echo("no gold data found", err=True)
@@ -197,17 +208,60 @@ def ls_convert(
 
 
 @app.command("review-llm")
-def review_llm(domain: DomainOpt = "health_stress") -> None:
-    """Suggest dictionary/trigger entries from logged LLM answers. TODO: M4."""
-    typer.echo("review-llm: not implemented yet (M4)")
-    raise typer.Exit(1)
+def review_llm(
+    domain: DomainOpt = "health_stress",
+    log: Annotated[Path | None, typer.Option(help="LLM log (default: [llm].log_path).")] = None,
+    min_count: Annotated[int, typer.Option(help="Minimum repeats before suggesting.")] = 2,
+    apply: Annotated[
+        bool, typer.Option("--apply", help="Write suggestions into the pack.")
+    ] = False,
+    yes: Annotated[bool, typer.Option("--yes", "-y", help="Don't ask for confirmation.")] = False,
+    config: ConfigOpt = None,
+) -> None:
+    """Show LLM answers worth promoting to dictionary/trigger rules."""
+    from leankg.config import load_config
+    from leankg.domain.loader import load_pack
+    from leankg.llm import review
+
+    cfg = load_config(config)
+    pack = load_pack(domain)
+    entries = review.load_log(log or cfg.llm.log_path)
+    if not entries:
+        typer.echo("no logged LLM answers yet (run a build with --llm groq first)")
+        raise typer.Exit(0)
+    triggers, synonyms = review.suggest(entries, pack, min_count)
+    typer.echo(f"{len(entries)} logged cases → {len(triggers)} trigger and "
+               f"{len(synonyms)} synonym suggestions (min count {min_count})")  # fmt: skip
+    for t in triggers:
+        typer.echo(f"  trigger [{t.lang}] {t.relation:<18} {t.phrase!r:<24} "
+                   f"{t.position}/{t.order}  x{t.count}  e.g. {t.examples[0]}")  # fmt: skip
+    for sy in synonyms:
+        typer.echo(
+            f"  synonym [{sy.lang}] {sy.surface!r} -> {sy.concept_id} ({sy.type})  x{sy.count}"
+        )
+    if apply and (triggers or synonyms) and (yes or typer.confirm("Write these into the pack?")):
+        for path in review.apply(pack, triggers, synonyms):
+            typer.echo(f"wrote {path}")
 
 
 @app.command("llm-models")
-def llm_models() -> None:
-    """List models served by the configured LLM provider. TODO: M4."""
-    typer.echo("llm-models: not implemented yet (M4)")
-    raise typer.Exit(1)
+def llm_models(config: ConfigOpt = None) -> None:
+    """List models served by the configured LLM provider (needs its API key / server)."""
+    from leankg.config import load_config
+    from leankg.llm import LLMError, make_client
+
+    cfg = load_config(config)
+    if cfg.llm.provider == "none":
+        cfg.llm.provider = "groq"
+    try:
+        client = make_client(cfg.llm)
+        models = client.list_models()
+    except LLMError as exc:
+        typer.echo(f"error: {exc}", err=True)
+        raise typer.Exit(1) from exc
+    for m in models:
+        marker = "  <- configured" if m == cfg.llm.model else ""
+        typer.echo(f"{m}{marker}")
 
 
 @app.command("import-owl")

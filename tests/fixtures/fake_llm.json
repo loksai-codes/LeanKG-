@@ -1,0 +1,7 @@
+{"_comment": "Canned answers for FakeClient tests. NOT model output.",
+ "responses": [
+  {"sentence": "ホースの亀裂が見つかった。",
+   "relations": [{"head": "ホース", "tail": "亀裂", "type": "HAS_FAILURE_MODE", "confidence": 0.9}]},
+  {"sentence": "The seal and the leak were inspected.",
+   "relations": [{"head": "seal", "tail": "leak", "type": "HAS_FAILURE_MODE", "confidence": 0.8}]}
+ ]}

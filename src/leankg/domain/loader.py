@@ -215,7 +215,10 @@ def load_relation_patterns(
     out: dict[str, RelationPatterns] = {}
     if not folder.is_dir():
         return out
-    for path in sorted(folder.glob("relations.*.yaml")):
+    # relations.<lang>.yaml first, then extra files such as relations.<lang>.learned.yaml
+    # (written by `leankg review-llm --apply`), whose rules are appended.
+    paths = sorted(folder.glob("relations.*.yaml"), key=lambda p: (p.name.count("."), p.name))
+    for path in paths:
         lang = path.name.split(".")[1]
         where = _rel(path, root)
         try:
@@ -237,7 +240,14 @@ def load_relation_patterns(
                             f"{where}:{_yaml_line(text, 'id')}: pattern {item.id}: "
                             f"unknown relation {choice.type!r}"
                         )
-        out[lang] = rp
+        if lang in out:
+            base = out[lang]
+            base.dependency.extend(rp.dependency)
+            base.triggers.extend(rp.triggers)
+            base.negation_cues.extend(rp.negation_cues)
+            base.hedge_cues.extend(rp.hedge_cues)
+        else:
+            out[lang] = rp
     return out
 
 
