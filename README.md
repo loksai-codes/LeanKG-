@@ -3,31 +3,51 @@
 **Turn English and Japanese documents into a Neo4j knowledge graph — classic NLP does most
 of the work, an LLM (Groq) is called only for the hard cases the rules can't settle.**
 
-- Low LLM use: target < 10% of sentences sent to the LLM; every run reports
-  `llm_call_rate`, `cache_hit_rate` and `est_cost_usd`. Runs fully offline with `--llm none`.
-- One engine, swappable **domain packs** (`health_stress`, `manufacturing`) and
-  **language profiles** (`en`, `ja`).
-- Provenance (doc, chunk, sentence offsets, method, language, confidence) on every node
-  and edge.
+- **Low LLM use.** Every run reports `llm_call_rate`, `cache_hit_rate` and `est_cost_usd`;
+  `--llm none` runs fully offline. A second run over the same data is served from cache.
+- **English and Japanese from day one.** One engine, swappable **language profiles**
+  (`en`, `ja`): GiNZA, character-level dictionary matching, Japanese negation rules, a CJK
+  full-text index; 「ストレス」 and "stress" become one entity.
+- **Domain packs, not code.** `health_stress` and `manufacturing` ship as data (ontology,
+  dictionaries, patterns, model names, LLM hints). Adding a domain changes no engine code.
+- **Provenance on everything.** Every node and edge records document, chunk, sentence
+  offsets, method (`dict|regex|ner|gliner|dep|trigger|cooc|llm`), language and confidence;
+  negated statements are kept as negative evidence.
 
-> Status: under active development (pre-0.1). See `docs/PLAN.md` for milestones.
+## 30-second quick start
+
+```bash
+pip install "leankg[ja]"                     # + "[neo4j,groq]" for Neo4j output / LLM fallback
+python -m spacy download en_core_web_sm
+leankg build examples/health_stress --domain health_stress --llm none --out json
+```
+
+```python
+from leankg import Pipeline
+
+pipe = Pipeline.from_domain("manufacturing", llm="none")
+report = pipe.build("examples/manufacturing", out="json", out_path="out/")
+print(report.llm_call_rate, report.by_lang["ja"].triples)
+```
+
+Neo4j: `docker compose up -d`, set `NEO4J_PASSWORD` in `.env`, add `--out neo4j`, then try
+`domains/manufacturing/demo_queries.cypher` (Japanese full-text search, a graph
+なぜなぜ分析 over `CAUSED_BY` chains, "seen this defect before?" by vector search).
+Groq: put `GROQ_API_KEY` in `.env` and add `--llm groq` (see `docs/groq-setup.md`).
 
 ## Architecture
 
-Every stage is a class with `process(doc) -> doc`, testable alone and skippable by config:
+```mermaid
+flowchart LR
+  A[Ingest<br/>lang per chunk] --> B[spaCy / GiNZA] --> C[Entities<br/>dict → regex → NER → GLiNER]
+  C --> D[Linking<br/>exact → fuzzy → embeddings] --> E[Relations<br/>dep → trigger → cooc]
+  E --> F[Negation / hedging] --> G[Validate & score] --> H{Route}
+  H -- confident --> W[Neo4j · JSON · CSV · GraphML]
+  H -- hard case --> L[LLM: cache · dedupe · batch · budget] --> W
+```
 
-1. **Ingest** — PDF / HTML / CSV / TXT, language detection per document and chunk,
-   sentence-aware chunking.
-2. **Preprocess** — spaCy via the chunk's `LanguageProfile` (EN `en_core_web_sm`,
-   JA GiNZA).
-3. **Entities** — dictionary → regex → statistical NER → GLiNER (cheapest first).
-4. **Linking** — exact/synonym → RapidFuzz → multilingual embeddings.
-5. **Relations** — dependency patterns → trigger lexicon → typed co-occurrence →
-   negation/hedging.
-6. **Validate & score** — schema check, confidence.
-7. **Route** — confident triples go to the graph; hard cases go to the LLM (or stay flagged).
-8. **Write** — Neo4j (`UNWIND … MERGE`, constraints, vector + CJK full-text indexes) or
-   JSON / CSV / NetworkX.
+Each stage is a class with `process(doc) -> doc`, testable alone and skippable by config.
+Details: `docs/architecture.md`.
 
 ## Benchmark
 
@@ -55,6 +75,27 @@ C and D need a Groq key and are not run yet.
 | any | en/ja | D Groq only | | pending key | | | |
 
 Reproduce: `uv run leankg eval --domain <pack> --setup A --fixtures` (see `docs/EVAL.md`).
+
+## Limitations
+- The seed packs are small and hand-written; real use needs real dictionaries (or
+  `leankg import-owl`) and gold data from your domain.
+- Trigger rules are surface-level: they can bridge clauses ("CBT treats insomnia, and
+  meditation lowers cortisol" also yields CBT → cortisol). Dependency patterns are
+  precise but miss misparsed sentences (en_core_web_sm struggles with headline style).
+- Japanese の-phrases (「ホースの亀裂」) are only low-confidence candidates by design; they
+  need the LLM (setup C) to become facts.
+- Following the routing rules, a sentence with one confident rule hit is never sent to the
+  LLM, so its other candidate pairs stay unverified.
+- Entity recall outside the dictionaries depends on GLiNER/scispaCy (setup B); with rules
+  only, recall on foreign vocabulary (NCBI Disease, MaintIE) is low.
+- Language detection is a kana/CJK-ratio heuristic (Chinese text would be treated as
+  Japanese); only `en` and `ja` profiles exist.
+
+## Roadmap
+- Live Groq numbers for setups C and D; independently labelled Japanese gold sets.
+- Sudachi user dictionary from pack terms (keep compounds as one token).
+- More languages via new profiles; pack plugins on PyPI via the `leankg.domains` entry point.
+- Smarter trigger scoping (clause boundaries), cross-sentence relations, coreference.
 
 ## Development
 

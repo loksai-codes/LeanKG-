@@ -266,9 +266,19 @@ def llm_models(config: ConfigOpt = None) -> None:
 
 @app.command("import-owl")
 def import_owl(
-    source: Annotated[Path, typer.Argument(help="OWL/RDF/TTL file.")],
+    source: Annotated[Path, typer.Argument(help="OWL/RDF/TTL file.", exists=True)],
     out: Annotated[Path, typer.Option(help="Output ontology.yaml")] = Path("ontology.yaml"),
+    dictionary: Annotated[
+        Path | None, typer.Option(help="Also write individuals as a dictionary CSV.")
+    ] = None,
+    name: Annotated[str, typer.Option(help="Pack name / id prefix.")] = "",
 ) -> None:
-    """Convert an OWL/RDF ontology into a pack ontology.yaml. TODO: M5."""
-    typer.echo("import-owl: not implemented yet (M5)")
-    raise typer.Exit(1)
+    """Convert an OWL/RDF ontology into a pack ontology.yaml (keeps @ja labels)."""
+    from leankg.domain.owl_import import import_ontology, write_outputs
+
+    onto, rows = import_ontology(source, name)
+    n_ja = sum(1 for e in onto["entities"].values() if "ja" in e["labels"])
+    typer.echo(f"{len(onto['entities'])} entity types ({n_ja} with Japanese labels), "
+               f"{len(onto['relations'])} relations, {len(rows)} dictionary rows")  # fmt: skip
+    for path in write_outputs(onto, rows, out, dictionary):
+        typer.echo(f"wrote {path}")

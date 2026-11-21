@@ -1,0 +1,39 @@
+site_name: leankg
+site_description: Documents (English and Japanese) to a Neo4j knowledge graph — rules first, a little LLM.
+repo_url: https://github.com/OWNER/leankg
+repo_name: leankg
+docs_dir: docs
+theme:
+  name: material
+  features: [navigation.sections, content.code.copy, search.suggest]
+  palette:
+    - scheme: default
+      toggle: {icon: material/brightness-7, name: Dark mode}
+    - scheme: slate
+      toggle: {icon: material/brightness-4, name: Light mode}
+markdown_extensions:
+  - admonition
+  - tables
+  - toc: {permalink: true}
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - {name: mermaid, class: mermaid, format: !!python/name:pymdownx.superfences.fence_code_format}
+nav:
+  - Getting started: index.md
+  - Architecture: architecture.md
+  - Writing a domain pack: domain-packs.md
+  - Adding a language (Japanese): adding-a-language.md
+  - LLM cost controls: llm-cost.md
+  - Groq setup: groq-setup.md
+  - Evaluation: EVAL.md
+  - Benchmark results: benchmarks.md
+  - Licences: licences.md
+  - Design notes:
+      - Plan: PLAN.md
+      - Japanese design: JAPANESE.md
+      - Groq design: GROQ.md
+  - Blog:
+      - leankg v0.1: blog/leankg-v0.1.md
+not_in_nav: |
+  PROGRESS.md

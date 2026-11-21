@@ -15,7 +15,7 @@ from leankg.models import (
 )
 from leankg.pipeline import Pipeline
 
-__version__ = "0.1.0.dev0"
+__version__ = "0.1.0"
 
 __all__ = [
     "Chunk",

@@ -1,0 +1,14 @@
+@prefix : <http://example.org/maint#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Hand-written test ontology (not IOF).
+:MaintainableItem a owl:Class ; rdfs:label "Maintainable item"@en , "保全対象"@ja .
+:Pump a owl:Class ; rdfs:subClassOf :MaintainableItem ; rdfs:label "Pump"@en , "ポンプ"@ja .
+:FailureMode a owl:Class ; rdfs:label "failure mode"@en , "故障モード"@ja ; rdfs:comment "How an item fails." .
+:hasFailureMode a owl:ObjectProperty ; rdfs:domain :MaintainableItem ; rdfs:range :FailureMode ;
+    rdfs:label "has failure mode"@en , "故障モードを持つ"@ja .
+:relatedTo a owl:ObjectProperty .
+:Leak a owl:NamedIndividual , :FailureMode ; rdfs:label "leak"@en , "漏れ"@ja ;
+    skos:altLabel "leakage"@en , "リーク"@ja .

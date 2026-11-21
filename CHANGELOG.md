@@ -6,6 +6,21 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] — 2026-11-21 (prepared; not yet published)
+
+### M6 — polish and publish
+- MkDocs Material site (getting started, architecture with pipeline diagram, writing a
+  domain pack, adding a language with Japanese as the worked example, LLM cost controls,
+  Groq setup, evaluation, benchmarks, licences) + GitHub Pages workflow.
+- Notebooks `health_stress_en.ipynb` and `manufacturing_ja.ipynb` (run with `--llm none`;
+  Cypher queries incl. Japanese full-text, NetworkX fallback without Neo4j).
+- `leankg import-owl` (OWL/RDF/TTL → ontology.yaml + dictionary CSV, keeps `@ja` labels).
+- Release workflow: `uv build`, wheel smoke test, TestPyPI then PyPI via trusted
+  publishing. Version 0.1.0.
+- Audit: no secrets in history (gitleaks), no datasets committed, `docs/licences.md`,
+  fresh-venv installs of the extras checked.
+- Blog draft `docs/blog/leankg-v0.1.md`.
+
 ### M5 — manufacturing pack (no engine changes)
 - `git diff --stat src/` is empty for this milestone; everything lives in
   `domains/manufacturing/` (plus tests).

@@ -1,1 +1,134 @@
-"""TODO: implemented in M1 (owl_import: M5)."""
+"""Convert an OWL / RDF / Turtle ontology into a pack ``ontology.yaml`` (+ dictionary rows).
+
+* ``owl:Class`` / ``rdfs:Class`` → entity types (``rdfs:subClassOf`` → ``parent``);
+* ``owl:ObjectProperty`` → relations (``rdfs:domain`` / ``rdfs:range`` → ``from`` / ``to``,
+  ``"*"`` when missing);
+* ``rdfs:label`` / ``skos:prefLabel`` with language tags → ``labels: {en, ja, …}``
+  (untagged labels count as English);
+* ``owl:NamedIndividual`` instances of imported classes → dictionary rows
+  (``id,type,lang,term,synonyms,source``), one per label language, ``skos:altLabel`` as
+  synonyms.
+"""
+
+from __future__ import annotations
+
+import csv
+import re
+from pathlib import Path
+from typing import Any
+
+import yaml
+
+_FORMATS = {".ttl": "turtle", ".owl": "xml", ".rdf": "xml", ".xml": "xml", ".nt": "nt",
+            ".jsonld": "json-ld", ".n3": "n3"}  # fmt: skip
+
+
+def _local(uri: Any) -> str:
+    text = str(uri)
+    return re.split(r"[#/]", text.rstrip("/#"))[-1]
+
+
+def _type_name(uri: Any) -> str:
+    words = re.findall(r"[A-Za-z0-9]+", _local(uri))
+    name = "".join(w[:1].upper() + w[1:] for w in words) or "Thing"
+    return name if name[0].isalpha() else f"T{name}"
+
+
+def _rel_name(uri: Any) -> str:
+    local = _local(uri)
+    snake = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", local)
+    name = re.sub(r"[^A-Za-z0-9]+", "_", snake).strip("_").upper() or "RELATED_TO"
+    return name if name[0].isalpha() else f"R_{name}"
+
+
+def _labels(g: Any, node: Any) -> dict[str, list[str]]:
+    from rdflib.namespace import RDFS, SKOS
+
+    out: dict[str, list[str]] = {}
+    for pred in (SKOS.prefLabel, RDFS.label):
+        for lit in g.objects(node, pred):
+            lang = getattr(lit, "language", None) or "en"
+            lang = lang.split("-")[0].lower()
+            text = str(lit).strip()
+            if text and text not in out.setdefault(lang, []):
+                out[lang].append(text)
+    return out
+
+
+def import_ontology(
+    source: str | Path, name: str = ""
+) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    """Parse ``source`` and return ``(ontology_dict, dictionary_rows)``."""
+    from rdflib import Graph, URIRef
+    from rdflib.namespace import OWL, RDF, RDFS, SKOS
+
+    path = Path(source)
+    g = Graph()
+    g.parse(str(path), format=_FORMATS.get(path.suffix.lower()))
+
+    classes = sorted({*g.subjects(RDF.type, OWL.Class), *g.subjects(RDF.type, RDFS.Class)}, key=str)
+    classes = [c for c in classes if isinstance(c, URIRef)]  # skip blank-node restrictions
+    names = {c: _type_name(c) for c in classes}
+    entities: dict[str, Any] = {}
+    for c in classes:
+        labels = {lang: vals[0] for lang, vals in _labels(g, c).items()}
+        entry: dict[str, Any] = {"labels": labels or {"en": _local(c)}}
+        parents = [names[p] for p in g.objects(c, RDFS.subClassOf) if p in names and p != c]
+        if parents:
+            entry["parent"] = sorted(parents)[0]
+        comment = next((str(x) for x in g.objects(c, RDFS.comment)), "")
+        if comment:
+            entry["description"] = comment.strip()[:300]
+        entities[names[c]] = entry
+
+    relations: dict[str, Any] = {}
+    for p in sorted(g.subjects(RDF.type, OWL.ObjectProperty), key=str):
+        dom = sorted({names[d] for d in g.objects(p, RDFS.domain) if d in names}) or ["*"]
+        rng = sorted({names[r] for r in g.objects(p, RDFS.range) if r in names}) or ["*"]
+        labels = {lang: vals[0] for lang, vals in _labels(g, p).items()}
+        relations[_rel_name(p)] = {"from": dom, "to": rng, "labels": labels}
+
+    rows: list[dict[str, str]] = []
+    for ind in sorted(g.subjects(RDF.type, OWL.NamedIndividual), key=str):
+        types = [names[t] for t in g.objects(ind, RDF.type) if t in names]
+        if not types:
+            continue
+        alts: dict[str, list[str]] = {}
+        for lit in g.objects(ind, SKOS.altLabel):
+            lang = (getattr(lit, "language", None) or "en").split("-")[0].lower()
+            alts.setdefault(lang, []).append(str(lit))
+        for lang, terms in _labels(g, ind).items():
+            rows.append({
+                "id": f"{name or path.stem}:{_local(ind)}",
+                "type": types[0],
+                "lang": lang,
+                "term": terms[0],
+                "synonyms": "|".join([*terms[1:], *alts.get(lang, [])]),
+                "source": f"owl:{path.name}",
+            })  # fmt: skip
+    onto = {"version": 1, "name": name or path.stem, "description": f"Imported from {path.name}",
+            "entities": entities, "relations": relations}  # fmt: skip
+    return onto, rows
+
+
+def write_outputs(
+    onto: dict[str, Any], rows: list[dict[str, str]], out: str | Path, dict_out: str | Path | None
+) -> list[Path]:
+    written = []
+    out_path = Path(out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        "# Generated by `leankg import-owl`. Review type/relation names before use.\n"
+        + yaml.safe_dump(onto, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
+    written.append(out_path)
+    if dict_out is not None and rows:
+        dpath = Path(dict_out)
+        dpath.parent.mkdir(parents=True, exist_ok=True)
+        with dpath.open("w", encoding="utf-8", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=["id", "type", "lang", "term", "synonyms", "source"])
+            w.writeheader()
+            w.writerows(rows)
+        written.append(dpath)
+    return written

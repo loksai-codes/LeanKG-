@@ -1,6 +1,6 @@
 [project]
 name = "leankg"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Turn English and Japanese documents into a Neo4j knowledge graph: classic NLP first, a little LLM for the hard cases."
 readme = "README.md"
 license = "Apache-2.0"

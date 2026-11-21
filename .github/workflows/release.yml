@@ -1,0 +1,54 @@
+# Release: build once, publish to TestPyPI, then (after manual approval of the `pypi`
+# environment) to PyPI — both via PyPI trusted publishing (no API tokens stored).
+# One-time setup on the PyPI side (owner): add a "trusted publisher" for this repo and
+# workflow `release.yml` on test.pypi.org (environment `testpypi`) and pypi.org
+# (environment `pypi`), and create those two environments in the GitHub repo settings.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Check tag matches version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          v=$(grep -m1 '^version' pyproject.toml | cut -d'"' -f2)
+          test "v$v" = "${GITHUB_REF_NAME}" || { echo "tag ${GITHUB_REF_NAME} != v$v"; exit 1; }
+      - run: uv build
+      - name: Smoke-test the wheel in a fresh venv
+        run: |
+          uv venv /tmp/smoke && . /tmp/smoke/bin/activate
+          uv pip install dist/*.whl
+          leankg --version
+          python -c "from leankg.domain.loader import available_packs; print(available_packs())"
+      - uses: actions/upload-artifact@v4
+        with: {name: dist, path: dist/}
+
+  testpypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions: {id-token: write}
+    steps:
+      - uses: actions/download-artifact@v4
+        with: {name: dist, path: dist/}
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  pypi:
+    needs: testpypi
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions: {id-token: write}
+    steps:
+      - uses: actions/download-artifact@v4
+        with: {name: dist, path: dist/}
+      - uses: pypa/gh-action-pypi-publish@release/v1
