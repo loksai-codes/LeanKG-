@@ -6,6 +6,25 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### M3 — statistical NER, GLiNER, linking, evaluation harness
+- NER stage: spaCy/GiNZA NER plus optional extra spaCy pipelines (e.g. scispaCy), labels
+  mapped to ontology types via `models.yaml`; missing models become RunReport warnings.
+- GLiNER stage (`[gliner]`): multilingual checkpoint from `models.yaml`, per-language
+  labels, only on sentences with fewer than N entities.
+- Linking: embedding fallback (`[embed]`, one multilingual sentence-transformers model,
+  disk-cached concept embeddings); chunk-embedding stage + Neo4j vector index; model name
+  recorded in graph metadata.
+- Evaluation harness `leankg eval --setup A|B|C|D --lang en|ja|all`: documented gold JSONL
+  format, entity P/R/F1 (exact + partial), linking accuracy, relation P/R/F1, LLM call
+  rate, cost per 1k docs, throughput; markdown table + `reports/<date>_<domain>_<setup>.json`;
+  `--types` filter for entity-only corpora; baseline check with tolerance.
+- 18 hand-written seed gold sentences per language per pack (`eval/fixtures/`), CI job
+  running setup B against `tests/fixtures/eval_baseline.json` (fails on > 2 pt drop).
+- Download + conversion scripts for NCBI Disease and BC5CDR (PubTator); data never
+  committed.
+- Label Studio support: config generator (character-level spans for Japanese), task
+  files with optional pre-annotation, export → gold converter (`leankg labelstudio …`).
+
 ### M2 — relations by rules, negation/hedging, validation
 - Dependency-pattern stage (spaCy `DependencyMatcher`, patterns are pack data in
   `patterns/relations.<lang>.yaml`), with conjunct expansion and a subtree fallback

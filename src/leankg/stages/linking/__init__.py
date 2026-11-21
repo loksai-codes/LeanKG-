@@ -211,4 +211,6 @@ def build_entities(doc: Document, pack: DomainPack) -> list[Entity]:
     return entities
 
 
-__all__ = ["LinkingStage", "build_entities"]
+from leankg.stages.linking.chunk_embed import ChunkEmbedStage  # noqa: E402
+
+__all__ = ["ChunkEmbedStage", "LinkingStage", "build_entities"]

@@ -31,3 +31,25 @@ jobs:
         run: uv run mypy src
       - name: Unit tests (offline)
         run: uv run pytest -q
+
+  eval-regression:
+    name: eval regression (setup B, LLM off, fixtures)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install (core + [ja] + dev group incl. en_core_web_sm)
+        run: uv sync --python 3.12 --extra ja
+      - name: Japanese-capable tests
+        run: uv run pytest -q
+      - name: Setup B on CI fixtures vs committed baseline (fail if F1 drops > 2 pts)
+        # GLiNER/embeddings need torch + model downloads; the baseline is produced with the
+        # same flags (scripts/update_baseline.sh) so the comparison is like for like.
+        run: |
+          for pack in health_stress manufacturing; do
+            uv run leankg eval --domain "$pack" --setup B --fixtures --llm none \
+              --skip gliner --skip embed \
+              --baseline tests/fixtures/eval_baseline.json --tolerance 0.02
+          done

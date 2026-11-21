@@ -1,0 +1,82 @@
+{
+  "health_stress/en/B": {
+    "entity_f1": 1.0,
+    "n_examples": 18,
+    "relation_f1": 1.0,
+    "stages": [
+      "ingest",
+      "preprocess",
+      "dictionary",
+      "regex",
+      "ner",
+      "linking",
+      "dependency",
+      "trigger",
+      "cooc",
+      "negation",
+      "validate",
+      "route",
+      "write"
+    ]
+  },
+  "health_stress/ja/B": {
+    "entity_f1": 0.9859,
+    "n_examples": 18,
+    "relation_f1": 0.9333,
+    "stages": [
+      "ingest",
+      "preprocess",
+      "dictionary",
+      "regex",
+      "ner",
+      "linking",
+      "dependency",
+      "trigger",
+      "cooc",
+      "negation",
+      "validate",
+      "route",
+      "write"
+    ]
+  },
+  "manufacturing/en/B": {
+    "entity_f1": 1.0,
+    "n_examples": 18,
+    "relation_f1": 0.7179,
+    "stages": [
+      "ingest",
+      "preprocess",
+      "dictionary",
+      "regex",
+      "ner",
+      "linking",
+      "dependency",
+      "trigger",
+      "cooc",
+      "negation",
+      "validate",
+      "route",
+      "write"
+    ]
+  },
+  "manufacturing/ja/B": {
+    "entity_f1": 0.9574,
+    "n_examples": 18,
+    "relation_f1": 0.7805,
+    "stages": [
+      "ingest",
+      "preprocess",
+      "dictionary",
+      "regex",
+      "ner",
+      "linking",
+      "dependency",
+      "trigger",
+      "cooc",
+      "negation",
+      "validate",
+      "route",
+      "write"
+    ]
+  }
+}

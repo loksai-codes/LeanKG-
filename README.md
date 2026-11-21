@@ -31,16 +31,28 @@ Every stage is a class with `process(doc) -> doc`, testable alone and skippable 
 
 ## Benchmark
 
-| Domain | Lang | Setup | Entity F1 | Relation F1 | LLM call rate | Cost / 1k docs |
-|---|---|---|---|---|---|---|
-| | en | A rules | | | | |
-| | en | B rules+models | | | | |
-| | en | C leankg (Groq fallback) | | | | |
-| | en | D Groq only | | | | |
-| | ja | A rules | | | | |
-| | ja | B rules+models | | | | |
-| | ja | C leankg (Groq fallback) | | | | |
-| | ja | D Groq only | | | | |
+Status 2026-11-21. **Read the caveats.** Seed fixtures = 18 hand-written sentences per
+language per pack (`domains/<pack>/eval/fixtures/`), written by the same people who wrote
+the dictionaries, so entity scores on them are optimistic; independently labelled
+Japanese gold sets (~100 sentences per pack) are pending. Setup B currently = rules +
+spaCy/GiNZA NER (GLiNER and embeddings not yet installed in the benchmark environment).
+C and D need a Groq key and are not run yet.
+
+| Domain | Lang | Setup | Gold | Entity F1 | Relation F1 | LLM call rate | Cost / 1k docs |
+|---|---|---|---|---|---|---|---|
+| health_stress | en | A rules | seed (18) | 1.00 | 1.00 | 0% | $0 |
+| health_stress | en | B rules+models | seed (18) | 1.00 | 1.00 | 0% | $0 |
+| health_stress | ja | A rules | seed (18) | 0.99 | 0.93 | 0% | $0 |
+| health_stress | ja | B rules+models | seed (18) | 0.99 | 0.93 | 0% | $0 |
+| manufacturing | en | A rules | seed (18) | 1.00 | 0.72 | 0% | $0 |
+| manufacturing | en | B rules+models | seed (18) | 1.00 | 0.72 | 0% | $0 |
+| manufacturing | ja | A rules | seed (18) | 0.96 | 0.78 | 0% | $0 |
+| manufacturing | ja | B rules+models | seed (18) | 0.96 | 0.78 | 0% | $0 |
+| health_stress | en | A rules | NCBI Disease test, 400 sents (Condition only) | 0.00 | – | 0% | $0 |
+| any | en/ja | C leankg (Groq fallback) | | pending key | | | |
+| any | en/ja | D Groq only | | pending key | | | |
+
+Reproduce: `uv run leankg eval --domain <pack> --setup A --fixtures` (see `docs/EVAL.md`).
 
 ## Development
 

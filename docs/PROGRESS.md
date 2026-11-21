@@ -4,7 +4,7 @@
 > prompt for the current milestone in `prompts/`. Continue from "Next".
 
 ## Current milestone
-M3 — NER, GLiNER, linking, evaluation harness (starting)
+M4 — Groq LLM fallback (code written, being finished)
 
 ## Environment facts (checked 2026-11-21)
 - Windows 11, uv 0.11.8, Python 3.12.10 (dev venv pinned to 3.12: scispaCy needs <3.13).
@@ -85,8 +85,31 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
     noun compound); the trigger lexicon covers those.
   - Finding: GiNZA has no `Polarity=Neg`; negation is the AUX lemma ない/ず/ぬ.
 
+- **M3** NER / GLiNER / embedding-linking / chunk-embedding stages, eval harness, seed
+  gold fixtures (18 per lang per pack), NCBI/BC5CDR scripts, Label Studio config +
+  tasks + converter, CI regression job + baseline. Results so far: see README table.
+  - Seed fixtures are author-written and share vocabulary with the dictionaries, so
+    entity F1 ≈ 1.0 there is NOT meaningful; relation recall is the informative part.
+  - NCBI Disease (400 test sentences, Condition only): setup A finds 0 of 409 mentions —
+    the stress dictionary has no genetic-disease vocabulary. Expected; it shows why
+    setup B (GLiNER / scispaCy) matters.
+  - BC5CDR download returns HTTP 403 for scripted requests → skipped (script kept).
+  - **GLiNER and embeddings are not installed yet in the dev venv**: the CPU-torch lock
+    kept timing out against PyPI on this network. Setup B numbers therefore = rules +
+    spaCy/GiNZA NER only. Retry: add torch CPU index (see git history of pyproject in
+    M3 notes) and `uv sync --all-extras`.
+
 ## Next
-- M3 (see prompts/03_models_linking_eval.md).
+- M4 (see prompts/04_groq_fallback.md).
+
+## Groq docs check (2026-11-21, for M4)
+- docs/GROQ.md is still accurate: gpt-oss-20b ($0.075/$0.30) and gpt-oss-120b ($0.15/$0.60)
+  are production, strict json_schema supported, streaming/tools not combinable with it.
+- `reasoning_effort` = low|medium|high for gpt-oss; `include_reasoning=false` hides reasoning
+  text (reasoning tokens are still billed as output).
+- Free tier for gpt-oss-20b (likely): 30 RPM, 1K RPD, **8K TPM**, 200K TPD → batches must stay
+  small enough for 8K TPM; client honours `retry-after` and `x-ratelimit-reset-tokens`.
+- Llama 3.x shutdown 2026-08-16 (past) even though the models page still lists them.
 
 ## Decisions log
 - D1: `[med]` and `[ja]` stay separate extras although they currently co-resolve.
