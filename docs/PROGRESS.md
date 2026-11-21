@@ -125,6 +125,13 @@ uv run ruff check . && uv run ruff format --check . && uv run mypy src && uv run
   version 0.1.0, release workflow (TestPyPI → PyPI trusted publishing), licences.md, blog
   draft, gitleaks: history clean (dir scan hits only numpy tests in the untracked .venv).
 
+- Stopped by Claude Code (system low on memory), not restarted: (a) installing CPU torch +
+  gliner + sentence-transformers into the WSL venv (so setup B still = rules + spaCy/GiNZA NER),
+  (b) the fresh-venv install audit of the built wheel's extras. Re-run when memory allows:
+  `uv pip install --python ~/.venvs/leankg/bin/python --index-url https://download.pytorch.org/whl/cpu torch`
+  then `uv pip install --python ~/.venvs/leankg/bin/python gliner sentence-transformers "numpy<2"`.
+  Dependency facts already verified by `uv lock`: [med] and [ja] co-resolve on spaCy 3.8.18.
+
 ## Next (once the Groq key is in .env)
 1. `uv run pytest -m integration -v` (Neo4j + live Groq tests).
 2. `uv run leankg eval --domain health_stress --setup C --llm groq --fixtures`
